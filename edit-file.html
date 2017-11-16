@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script type="text/javascript" src="js/mui.min.js"></script>
+</head>
+<body>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    
+    <style type="text/css">
+    	body{background: white;}
+    	.back{width: 10%;margin-top: 12px;}
+    	.refresh{float: right;margin-right: 10px;margin-top: 12px;color: #666 !important;}
+    	.mui-bar{display: block !important;}
+    	.mui-content{margin-top: 15%;background: white;}
+    	.mui-table-view-cell:after{right: 5%;left: 3%;}
+    	.mui-table-view:after{left: 3%;right: 5%;}
+    	.mui-table-view:before{background-color: transparent;}
+    	.mui-table-view-cell{line-height: 43px;}
+    	.pic{margin-left: 70%;}
+    	.img{width: 10%;margin-top: 1%;display: block;float: right;border-radius: 30px;background: #dcdcdc;padding: 5px;
+    	margin-right: 2%;}
+    	.right{float: right;margin-right: 6%;}
+    	.skill{margin-left: 20%;}
+    	.skill p{margin-left: 17%;}
+    	.identy{margin-left: 70%;margin-top: -28%;display: block;}
+    	.first{width: 11%;}
+    	.second{width: 45%;}
+    	.confirm{color: #333;text-align: center;margin-top: 5%;}
+    </style>
+    <header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left"><img class="back" src="images/return.png" alt="" /></a>
+		<h1 class="mui-title">个人资料编辑</h1>
+		<a class="refresh" href="edit-file.html">提交</a>
+	</header>
+	<div class="mui-content">
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		                    头像
+		        <span class="pic"><img class="img" src="images/per-1.png" alt="" /></span>		            
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right">
+		           	昵称
+		            <span class="name right">会飞的鱼</span>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right">
+		                              个性签名
+		            <span class="motto right">hello我是会飞的鱼，喜欢..</span>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right">
+		                              年龄
+		            <span class="age right">23</span>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right">
+		                              身高
+		            <span class="height right">165cm</span>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <a class="mui-navigate-right">
+		                              体重
+		            <span class="weight right">53kg</span>
+		        </a>
+		    </li>
+		</ul>
+		<div class="menu">
+		    <p class="confirm">平台认证</p>
+			<span class="skill">
+				<img class="first" src="images/skill.png" alt="" />
+				<p>技能发布</p>
+			</span>
+			<span class="identy">
+				<img class="second" src="images/acquire.png" alt="" />
+				<p>身份认证</p>
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+    mui.init()
+    </script>
+</body>
+</html>

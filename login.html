@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <style type="text/css">
+    	body{background: white;}
+    	.content{background: white;}
+    	#slider{height: 450px !important;padding-top: 13%;}
+    	.last{text-align: center;}
+    	.portrary{text-align: center;}
+    	.text{margin-top: 5%;}
+    	.phonelogin{width: 90%;margin-left: 5%;background: rgba(180,40,30,1);border-radius: 7px;
+    	color: white;padding: 0% 0;margin-top: 2%;}
+    	.phone{width: 10%;margin-left: -20%;}
+    	.dia{font-size: 14px;display: block;margin-top: -9%;margin-bottom: 3%;margin-left: 8%;}
+    	.way{width: 41%;float: left;border: 1px solid #666;margin-left: 6%;border-radius: 5px;
+    	padding: 5px 0 5px 20px;margin-top: 5%;}
+    	.qq{width: 19%;}
+    	.wechat{width: 22%;}
+    	.chat{ display: block;margin-top: -20%;margin-left: 27%;color: #64aa14;}
+    	.deal{margin-top: 20%;color: #333;font-size: 16px;margin-left: 40%;}
+    </style>
+    <div class="mui-content content">
+    	<div id="slider" class="mui-slider">
+    	  <div class="mui-slider-group mui-slider-loop spot">
+    	    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+    	    <div class="mui-slider-item mui-slider-item-duplicate">
+    	      <a href="#">
+    	        <img src="images/l-2.png">
+    	      </a>
+    	    </div>
+    	    <!-- 第一张 -->
+    	    <div class="mui-slider-item portrary"> 
+    	      <a href="#">
+    	        <img class="second" src="images/l-1.png">
+    	      </a>
+    	      <p class="text">诚信而立</p>
+    	      <p class="text">恋道坚持诚信为本</p>
+    	      <p class="text">感谢您参与恋道诚信树的建设！</p>
+    	    </div>
+    	    <!-- 第二张 -->
+    	    <div class="mui-slider-item portrary">
+    	      <a href="#">
+    	        <img src="images/l-2.png">
+    	      </a>
+    	      <p class="text">约会巴黎岛</p>
+    	      <p class="text">坚持诚信为本</p>
+    	      <p class="text">您将赢得恋道赠送的巴黎岛之旅！</p>
+    	    </div>
+    	    <!-- 第三张 -->
+    	    <!--<div class="mui-slider-item">
+    	      <a href="#">
+    	        <img src="images/ad-1.jpg">
+    	      </a>
+    	    </div>-->
+    	    <!-- 第四张 -->
+    	    <!--<div class="mui-slider-item">
+    	      <a href="#">
+    	        <img src="images/ad-4.jpg">
+    	      </a>
+    	    </div>-->
+    	    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+    	    <div class="mui-slider-item mui-slider-item-duplicate last">
+    	      <a href="#">
+    	        <img src="images/l-1.png">
+    	      </a>
+    	      <p class="text">诚信而立</p>
+    	      <p class="text">恋道坚持诚信为本</p>
+    	      <p class="text">感谢您参与恋道诚信树的建设！</p>
+    	    </div>
+    	  </div>
+    	  <div class="mui-slider-indicator">
+    	    <div class="mui-indicator mui-active"></div>
+    	    <div class="mui-indicator"></div>
+    	    <!--<div class="mui-indicator"></div>
+    	    <div class="mui-indicator"></div>-->
+    	  </div>
+    	</div>
+    	<button id="login" type="button" class="phonelogin"><img class="phone" src="images/phone-w.png" alt="" /><span class="dia">手机登录</span></button>
+    	<div class="box">
+    		<div class="way">
+    			<img class="wechat" src="images/wechat-g.png" alt="" />
+    			<span class="chat">QQ登录</span>
+    		</div>
+    		<div class="way">
+    			<img class="qq" src="images/qq-g.png" alt="" />
+    			<span class="chat">微信登录</span>
+    		</div>
+    	</div>
+    	<p class="deal">用户协议</p>
+    </div>
+    <script type="text/javascript">
+    mui.init();
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+    	interval:2000
+    });
+    document.getElementById("login").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:'login-item.html'
+    	})
+    })
+    </script>
+</body>
+</html>

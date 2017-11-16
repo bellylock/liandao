@@ -1,0 +1,250 @@
+{
+  "main.html": {
+    "refer": [
+      "setting.html",
+      "login.html",
+      "discover.html",
+      "express.html",
+      "edit.html",
+      "acceptdate.html",
+      "nearby.html",
+      "mission.html",
+      "message.html",
+      "account.html",
+      "identify.html",
+      "advice.html",
+      "friends.html",
+      "set.html",
+      "problem.html"
+    ],
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/iconfont.css",
+      "fonts/mui.ttf",
+      "images/banner.png",
+      "images/file.png",
+      "images/people-1.png",
+      "images/sep-1.png",
+      "images/circle.png",
+      "images/per.png",
+      "images/compass.png",
+      "images/msg-1.png",
+      "images/per-1.png",
+      "images/advice.png",
+      "images/acquire.png",
+      "images/arrange.png",
+      "images/help.png",
+      "images/message.png",
+      "images/exit.png",
+      "images/set.png",
+      "images/invite.png",
+      "images/account.png"
+    ]
+  },
+  "login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "images/sinaweibo.png",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/weixin.png",
+      "images/qq.png",
+      "js/mui.enterfocus.js",
+      "css/iconfont.css",
+      "images/logo.png",
+      "css/iconfont.ttf",
+      "images/wechat.png"
+    ],
+    "refer": [
+      "main.html",
+      "login-item.html"
+    ]
+  },
+  "setting.html": {
+    "resources": [
+      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+      "fonts/mui.ttf",
+      "libs/easymob-webim-sdk/json2.js",
+      "libs/easymob-webim-sdk/jquery-1.11.1.js",
+      "js/mui.locker.js",
+      "js/feedback.js",
+      "css/feedback-page.css",
+      "js/feedback-page.js",
+      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+      "js/mui.view.js"
+    ],
+    "refer": []
+  },
+  "discover.html": {
+    "resources": [
+      "js/mui.min.js",
+      "images/per.png",
+      "css/mui.min.css",
+      "images/banner.png",
+      "images/search.png",
+      "fonts/mui.ttf",
+      "images/cro.png",
+      "images/honest.png",
+      "images/business.png",
+      "images/per-1.png",
+      "images/advice.png",
+      "images/acquire.png",
+      "images/arrange.png",
+      "images/help.png",
+      "images/message.png",
+      "images/exit.png",
+      "images/set.png",
+      "images/invite.png",
+      "images/account.png"
+    ],
+    "refer": [
+      "edit.html",
+      "acceptdate.html",
+      "main.html",
+      "login.html",
+      "problem.html",
+      "set.html"
+    ]
+  },
+  "express.html": {
+    "resources": [
+      "js/mui.min.js",
+      "images/per.png",
+      "css/mui.min.css",
+      "images/banner.png",
+      "fonts/mui.ttf",
+      "images/pro.png",
+      "images/time.png",
+      "images/redbag.png",
+      "images/position.png",
+      "images/ask.png",
+      "images/file.png",
+      "images/per-1.png",
+      "images/advice.png",
+      "images/acquire.png",
+      "images/arrange.png",
+      "images/help.png",
+      "images/message.png",
+      "images/exit.png",
+      "images/set.png",
+      "images/invite.png",
+      "images/account.png"
+    ],
+    "refer": [
+      "examples/card.html",
+      "acceptdate.html",
+      "edit.html",
+      "main.html",
+      "login.html",
+      "examples/input.html",
+      "examples/feedback.html",
+      "card.html",
+      "date-time.html",
+      "invite-item.html",
+      "request.html",
+      "redpocket.html",
+      "address.html",
+      "set.html"
+    ]
+  },
+  "examples/card.html": {
+    "resources": [
+      "images/logo.png",
+      "images/cbd.jpg",
+      "images/yuantiao.jpg",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/app.css"
+    ],
+    "refer": []
+  },
+  "major.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css"
+    ],
+    "refer": []
+  },
+  "acceptdate.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/app.css",
+      "css/iconfont.css",
+      "css/mui.min.css",
+      "images/return.png",
+      "images/female.png",
+      "images/male.png",
+      "images/time.png",
+      "images/distance.png",
+      "images/position.png",
+      "images/pro.png",
+      "images/fe.png",
+      "images/acquire.png",
+      "images/fee.png",
+      "images/de.png",
+      "images/man-1.png"
+    ],
+    "refer": []
+  },
+  "edit.html": {
+    "resources": [
+      "images/per-1.png",
+      "js/mui.min.js",
+      "css/app.css",
+      "css/mui.min.css",
+      "images/return.png",
+      "images/head.png",
+      "fonts/mui.ttf",
+      "images/man-1.png",
+      "images/localtion.png",
+      "images/acquire.png",
+      "images/skill.png"
+    ],
+    "refer": [
+      "edit-file.html"
+    ]
+  },
+  "edit-file.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/app.css",
+      "css/mui.min.css",
+      "images/return.png",
+      "fonts/mui.ttf",
+      "images/per-1.png",
+      "images/acquire.png",
+      "images/skill.png"
+    ],
+    "refer": [
+      "edit.html"
+    ]
+  },
+  "date-time.html": {
+    "refer": [
+      "express.html"
+    ],
+    "resources": []
+  },
+  "request.html": {
+    "refer": [
+      "express.html"
+    ],
+    "resources": []
+  },
+  "address.html": {
+    "refer": [
+      "address-detail.html"
+    ],
+    "resources": []
+  },
+  "login-item.html": {
+    "refer": [
+      "main.html"
+    ]
+  }
+}

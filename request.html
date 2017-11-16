@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<style type="text/css">
+		.cancel{float: left; color: #333 !important; margin-top: 3%;margin-left: 2%;}
+		.confirm{float: right; margin-top: 3%;margin-right: 2%;}
+		.mui-content{margin-top: 10%;padding-left: 10%;}
+		.gender{color: #000 !important;font-size: 18px;margin-bottom: 10%;}
+		.c11{margin-top: 15%;}
+		.c12{margin-top: 10%;}
+		.c2{float: left;}
+		.need{margin-top: 5% !important;display: block;font-size: 18px;}
+		.expect{margin-top: 5% !important;display: block;font-size: 18px;}
+		.number{margin-left: 8%}
+		.switch{margin-left: 30%;}
+		.caption{border: 0 solid transparent;width:80%;}
+		.solider{width:20% !important; border-color:transparent !important;color: #333 !important;
+		background: #ccc;margin-right: 5% !important;display: inline !important; padding: 10px;
+        border-radius: 20px;}
+        .mui-active{background: #4cd964 !important; color: white !important;}
+	</style>
+    <header class="mui-bar mui-bar-nav">
+     	<a href="#" class="cancel" id="cancel">取消</a>
+     	<a href="#" class="confirm">确认</a>
+    </header>
+    <div class="mui-content">
+    	<div class="mui-row">
+    		<p class="gender">选择性别</p>
+    	    <div class="mui-col-xs-12">
+    	    	<div class="mui-segmented-control caption">
+		    	    <a class="mui-control-item mui-active solider" href="#item1">男</a>
+		    	    <a class="mui-control-item solider" href="#item2">女</a>
+		    	    <a class="mui-control-item solider" href="#item2">不限</a>
+		    	</div>
+    	    </div>
+    	    <div class="mui-col-xs-12 c11">
+    	    	<div class="mui-col-xs-5 c2">
+    	    		<span class="need">需要几人</span>
+    	    	</div>
+    	    	<div class="mui-col-xs-5 c2 number">
+    	    		<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='10'>
+					  	<button class="mui-btn mui-numbox-btn-minus sub mui-btn-primary mui-btn-outlined" type="button">-</button>
+					  	<input class="mui-numbox-input" type="number" />
+					  	<button class="mui-btn mui-numbox-btn-plus plus" type="button">+</button>
+					</div>
+    	    	</div>
+    	    </div>
+    	    <div class="mui-col-xs-12 c12">
+    	    	<div class="mui-col-xs-5 c2">
+    	    		<span class="expect">期望礼仪性饮酒</span>
+    	    	</div>
+    	    	<div class="mui-col-xs-2 c2 switch">
+					<div class="mui-switch mui-switch-mini">
+					  <div class="mui-switch-handle"></div>
+					</div>
+    	    	</div>
+    	    </div>
+    	</div>
+    </div>
+     
+    <script type="text/javascript">
+    mui.init({
+    	preloadPages:[{
+    	id:'request.html',
+    	url:'request.html'           
+  	}]
+    });
+    document.getElementById("cancel").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'express.html',
+    		url:'express.html'
+    	})
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+    	.mui-content{margin-top: %;}
+    	.matter{background: white;padding-top:5%;}
+    	.mui-table-view{background: white;}
+    	.mui-table-view:before{background-color: transparent;}
+    	.mui-table-view:after{background-color: transparent;}
+    	.pic{width:30%;float:left;padding-left: 3%;}
+    	.detail{width:70%;float:left;padding-left: 5%;}
+    	.local{text-align: right; padding-right: 10%;}
+    	.localtion{width: 5%;}
+    	.posi{margin-left:5%;font-size:16px;}
+    	.ps{position: absolute;bottom: 13%;margin-left:23%;}
+    	.btn{width:90%;position: absolute;bottom:0;margin-left: 5%;}
+    </style>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">店铺详情</h1>
+    </header>
+    <div class="mui-content">
+    	<div class="mui-row matter">
+    	    <div class="mui-col-xs-12">
+    	    	<div class="mui-col-xs-3 pic">
+    	    		<img class="" src="images/ad-1.jpg" alt="" />
+    	    	</div>
+    	    	<div class="mui-col-xs-9 detail">
+    	    		<p>金胞粮格调曹婷</p>
+    	    		<p>
+    	    			<img src="images/star.jpg" alt="" />
+    	    			<img src="images/star.jpg" alt="" />
+    	    			<img src="images/star.jpg" alt="" />
+    	    			<img src="images/star.jpg" alt="" />
+    	    		</p>
+    	    		<p>人均： ￥48</p>
+    	    		<p class="local">
+    	    			<img class="localtion" src="images/localtion.png" alt="" /> 4.8km
+    	    		</p>
+    	    	</div>
+    	    </div>
+    	</div>
+    	<ul class="mui-table-view">
+    	    <li class="mui-table-view-cell">
+    	        <img class="localtion" src="images/localtion.png" alt="" />
+    	        <span class="posi">西山区东寺街22号</span>
+    	    </li>
+    	    <li class="mui-table-view-cell">
+    	        <a class="mui-navigate-right">
+    	            <img class="localtion" src="images/phone.png" alt="" />
+    	            <span class="posi">0871-66589664</span>
+    	        </a>
+    	    </li>
+    	</ul>
+    	<br>
+    	<ul class="mui-table-view">
+    	    <li class="mui-table-view-cell">
+    	        <a class="mui-navigate-right">
+    	            <img class="localtion" src="images/external.png" alt="" />
+    	            <span class="posi">网友点评（1496）</span>
+    	        </a>
+    	    </li>
+    	</ul>
+    	<p class="ps">记得预定好场地，场地费自付哦</p>
+    	<button type="button" class="mui-btn mui-btn-red mui-btn-block btn">确认选择</button>
+    </div>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+    </script>
+</body>
+</html>

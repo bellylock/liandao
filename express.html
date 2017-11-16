@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script type="text/javascript" src="js/mui.min.js"></script>-->
+</head>
+<body>
+<style type="text/css">
+    .mui-content{margin-top: 2px; background: white;padding-bottom: 3%;}
+    .mui-bar{background: white;}
+    .left{width: 60px;}
+    .person{width: 90%;margin-left: 10px;}
+    .mui-table-view-cell:after{right: 20px;}
+    .mui-table-view-cell{line-height: 35px;}
+    .mui-table-view:after{left: 20px;right: 20px;}
+    .detail{line-height: 35px;}
+    .first{background: rgba(180,40,30,1);}
+    .list{width: 12%;margin-top: 5px;}
+    .passage{display: block;margin-left: 45px;margin-top: -48px;color: white;}
+    .text{color: #666;display: block;margin-left: 45px;margin-top: -48px;}
+    .sends{width: 70px;height: 70px;border-radius: 35px;background: rgba(100,170,20,1);margin-left: 40%;
+    margin-top: 10px;display: block;padding-top: 25px;padding-left: 17px;color: white !important;}
+    .send-item{width: 100px;height: 100px;}
+    .unit4{padding-left: 0;padding-right: 0;list-style: none;text-align: center;}
+    .sidebar{background: white;}
+    .side{width: 12%;}
+    .side-text{display: block;margin-left: 38px;margin-top: -43px;}
+    .unit{list-style: none;margin-top: -2%;}
+    .image{width: 50px;margin-left: 5px;margin-top: 3px;}
+    .img-title{background: #ccc;width: 60px;height: 60px;border-radius: 30px;margin-left: 100px;margin-top: 50px;}
+    .account{margin-top: 10px;margin-left: 100px;color: #333;margin-bottom: 20px;}
+    .set{margin-top: 40px;}
+    .side-bottom{width: 70%;}
+    .bottom{width: 25%;float: left;}
+    .bottom-first{margin-left: 10%;}
+    .offCanvasSide{background: white;}
+    .c6{padding:5% 0; border: 1px solid #dcdcdc;width: 45%;float: left;margin-left: 3%;
+    margin-top: 3%;border-radius: 7px;}
+    .pic{width: 20%;margin-left: 25%;}
+    .pics{width: 18%;margin-left: 15%;}
+    .matter{display: block;margin-top: -18%;margin-left: 48%;color: #666;}
+    .matters{display: block;margin-top: -18%;margin-left: 40%;color: #666;}
+    </style>
+    <!-- 主界面菜单同时移动 -->
+    <!-- 侧滑导航根容器 -->
+    <div class="mui-off-canvas-wrap mui-draggable">
+        <!-- 主页面容器 -->
+        <div class="mui-inner-wrap">
+        <!-- 菜单容器 -->
+        <aside class="mui-off-canvas-left" id="offCanvasSide">
+            <div class="mui-scroll-wrapper sidebar">
+                <div class="mui-scroll">
+	                <!-- 菜单具体展示内容 -->
+	                <div class="mui-row">
+			        	<div class="mui-col-sm-6 mui-col-xs-12">
+			        		<h1 class="img-title" id="portrayal">
+			        			<img class="image" src="images/per-1.png" alt="" />
+			        		</h1>
+			        		<p class="account">会飞的鱼</p>
+			        	</div>
+				        <div class="mui-col-sm-6 mui-col-xs-12">
+				            <li class="mui-table-view-cell unit" id="invited">
+				                <img class="side" src="images/invite.png" alt="" />
+				                <span class="side-text">邀约</span>
+				            </li>
+				        </div>
+				        <div class="mui-col-sm-6 mui-col-xs-12">
+				            <li class="mui-table-view-cell unit" id="msg">
+				                <img class="side" src="images/message.png" alt="" />
+				                <span class="side-text">消息</span>
+				            </li>
+				        </div>
+				        <div class="mui-col-sm-6 mui-col-xs-12">
+				            <li class="mui-table-view-cell unit" id="account">
+				                <img class="side" src="images/account.png" alt="" />
+				                <span class="side-text">账户</span>
+				            </li>
+				        </div>
+				        <div class="mui-col-sm-6 mui-col-xs-12">
+				            <li class="mui-table-view-cell unit" id="identify">
+				                <img class="side" src="images/acquire.png" alt="" />
+				                <span class="side-text">获取认证标示</span>
+				            </li>
+				        </div>
+				        <div class="mui-col-sm-6 mui-col-xs-12">
+				            <li class="mui-table-view-cell unit" id="advice">
+				                <img class="side" src="images/advice.png" alt="" />
+				                <span class="side-text">意见反馈</span>
+				            </li>
+				        </div>
+				        <div class="mui-col-sm-6 mui-col-xs-12">
+				            <li class="mui-table-view-cell unit" id="friend">
+				                <img class="side" src="images/arrange.png" alt="" />
+				                <span class="side-text">推荐好友</span>
+				            </li>
+				        </div>
+				        <div class="mui-col-sm-6 mui-col-xs-12 set">
+				        	<div class="mui-col-xs-3 bottom bottom-first">
+				        		<li class="mui-table-view-cell unit4" id="set">
+				        			<img class="side-bottom" src="images/set.png" alt="" />
+				        			<p>设置</p>
+				        		</li>
+				        	</div>
+				        	<div class="mui-col-xs-3 bottom">
+				        		<li class="mui-table-view-cell unit4" id="issue">
+				        			<img class="side-bottom" src="images/help.png" alt="" />
+				        			<p>常见问题</p>
+				        		</li>
+				        	</div>
+				        	<div class="mui-col-xs-3 bottom">
+				        		<li class="mui-table-view-cell unit4" id="exit">
+				        			<img class="side-bottom" src="images/exit.png" alt="" />
+				        			<p>退出</p>
+				        		</li>
+				        	</div>
+				        </div>
+	            	</div>
+                </div>
+            </div>
+        </aside>
+        <!-- 主页面标题 -->
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon mui-pull-left left" href="#offCanvasSide">
+                <img class="person" src="images/per.png" alt="" />
+            </a>
+        </header>
+        <!-- 主页面内容容器 -->
+        <div class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!-- 主界面具体展示内容-->
+                <!--<div class="mui-content">-->
+					<div id="slider" class="mui-slider" >
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+								    <img class="banner" src="images/banner.png">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+								    <img class="banner" src="images/banner.png">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+								    <img class="banner" src="images/banner.png">
+								</a>
+							</div>
+							<!-- 第三张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+								    <img class="banner" src="images/banner.png">
+								</a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+								    <img class="banner" src="images/banner.png">
+								</a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+								    <img class="banner" src="images/banner.png">
+								</a> 
+							</div>
+						</div>
+					</div>
+				
+					<div class="mui-row">
+						<div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/food-1.png" alt="" />
+								<span class="matter">吃美食</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/microphone.png" alt="" />
+								<span class="matter">K歌</span>
+							</div>
+						</div>
+						<div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/movie-1.png" alt="" />
+								<span class="matter">看电影</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/game.png" alt="" />
+								<span class="matter">游戏</span>
+							</div>
+						</div>
+					    <div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/wine.png" alt="" />
+								<span class="matter">喝一杯</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/coffee.png" alt="" />
+								<span class="matter">喝咖啡</span>
+							</div>
+						</div>
+						<div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/muscle.png" alt="" />
+								<span class="matter">健身</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/tree.png" alt="" />
+								<span class="matter">郊游</span>
+							</div>
+						</div>
+						<div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/party.png" alt="" />
+								<span class="matter">party</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pics" src="images/write.png" alt="" />
+								<span class="matters">项目自定义</span>
+							</div>
+						</div>
+						<div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/party.png" alt="" />
+								<span class="matter">party</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pics" src="images/write.png" alt="" />
+								<span class="matters">项目自定义</span>
+							</div>
+						</div>
+						<div class="mui-col-xs-12">
+							<div class="mui-col-xs-6 c6">
+								<img class="pic" src="images/party.png" alt="" />
+								<span class="matter">party</span>
+							</div>
+							<div class="mui-col-xs-6 c6">
+								<img class="pics" src="images/write.png" alt="" />
+								<span class="matters">项目自定义</span>
+							</div>
+						</div>
+					</div>
+    			<!--</div>-->
+            </div>
+        </div>
+        <div class="mui-off-canvas-backdrop"></div> 
+        </div>
+    </div>
+    <script type="text/javascript">
+    mui.init();		
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+    	interval:2000
+    });
+    mui('.mui-scroll-wrapper').scroll({
+//  	deceleration: 0.0005,
+    	scrollY: true, //是否竖向滚动
+		scrollX: false, //是否横向滚动
+		startX: 0, //初始化时滚动至x
+		startY: 0, //初始化时滚动至y
+		indicators: false, //是否显示滚动条
+		deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+//		bounce: true //是否启用回弹
+	});
+	document.getElementById("invited").addEventListener('tap',function(){ 
+    	mui.openWindow({
+    		id:'acceptdate.html',
+    		url:'acceptdate.html'
+    	})
+    });
+    document.getElementById("msg").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:'message.html'
+    	})
+    });
+    document.getElementById("account").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:'account.html'
+    	})
+    });
+    document.getElementById("identify").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:"identify.html"
+    	})
+    });
+    document.getElementById("advice").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:'advice.html'
+    	})
+    });
+    document.getElementById("friend").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:'friends.html'
+    	})
+    });
+    
+    document.getElementById("portrayal").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'edit.html',
+    		url:'edit.html'
+    	})
+    });
+    document.getElementById("set").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'set.html',
+    		url:'set.html'
+    	})
+    });
+    document.getElementById("issue").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'problem.html',
+    		url:'problem.html'
+    	})
+    });
+    document.getElementById("exit").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'login.html',
+    		url:'login.html'
+    	})
+    });
+    
+    
+    
+//  document.getElementById("itemfirst").addEventListener('tap',function(){
+//  	mui.openWindow({
+//  		id:'invite-item.html',
+//  		url:'invite-item.html'
+//  	})
+//  });
+//  document.getElementById("time").addEventListener('tap',function(){
+//  	mui.openWindow({
+//  		id:'date-time.html',
+//  		url:'date-time.html'
+//  	})
+//  });
+//  document.getElementById("address").addEventListener('tap',function(){
+//  	mui.openWindow({
+//  		id:'address.html',
+//  		url:'address.html'
+//  	})
+//  });
+//  document.getElementById("request").addEventListener('tap',function(){
+//  	mui.openWindow({
+//  		id:'request.html',
+//  		url:'request.html'
+//  	})
+//  });
+//  document.getElementById("showUserPicker").addEventListener('tap',function(){
+//  	mui.openWindow({
+//  		id:'redpocket.html',
+//  		url:'redpocket.html'
+//  	})
+//  });
+    </script>
+</body>
+</html>
+ 

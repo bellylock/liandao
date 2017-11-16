@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我的赴约</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+	</head>
+
+	<body>
+		<style type="text/css">
+			.refresh{display: block;margin-top: 13px;float: right;margin-right: 15px;color: #666 !important;}
+			.back{width: 9%;margin-top: 13px;}
+			.matter{line-height: 33px;}
+			.matter-first{margin-top: 11%;}
+			.pic{width:90px;height: 130px;margin-left: -30%;margin-top: 20px;}
+			.unit{float: left;}
+			.picture{width: 15%;}
+			.eat{display: block;margin-left: 20%;margin-top: -32%;}
+			.mid{margin-left: 10px;}
+			.gender{background: grey;padding: 5px 15px;border-radius: 10px;}
+			.fe{width: 10%;color: white !important;margin-left: -10px;}
+			.age{color: white;margin-left: 10px;}
+			.portrary{width: 20%;margin-top: -30px;margin-left:70px;display: block;}
+			.fees{background: grey;/*padding: 5px 15px;*/padding-top:2px ; border-radius: 8px;display: block;width: 65px;margin-top: -30px;
+			margin-left: 100px;}
+			.fee{width: 30%;margin-left: 5px;margin-top: -2px;}
+			.num{color: white;margin-top: -36px;display: block;margin-left: 25px;}
+			.down{margin-top: 60px;margin-left: 60px;}
+			.invited{width: 20%;display: inline-block;}
+			.cks{background:rgba(130,200,0,1);padding-bottom: 4px;padding-top: 17px;padding-left: 5px;padding-right: 5px;border-radius: 5px;}
+			.ck{margin-top: -40px;margin-left: 10px;font-size: 18px;display:inline-block;color: white;}
+			.mui-bar {display: block !important;}
+		</style>
+	
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back  mui-pull-left"><img class="back" src="images/return.png" alt="" /></a>
+			<h1 class="mui-title">我的赴约</h1>
+			<a class="refresh">刷新</a>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell mui-media matter matter-first">
+			    	<div class="mui-col-xs-2 unit">
+			    		<img class=" pic" src="images/female.png">
+			    	</div>
+			    	<div class="mui-col-xs-4 unit mid">
+			    		<div class="mui-col-xs-12">
+			    			我
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/pro.png" alt="" />
+			    			<span class="eat">吃饭</span>
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/time.png" alt="" />
+			    			<span class="eat">14:35</span>
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/position.png" alt="" />
+			    			<span class="eat">盘龙区</span>
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/distance.png" alt="" />
+			    			<span class="eat">距离18km</span>
+			    		</div>
+			    	</div>
+			    	<div class="mui-col-xs-5 unit">
+			    		<div class="mui-col-xs-12">
+			    			<span class="gender"><img class="fe" src="images/fe.png" alt="" /><span class="age">23</span></span>
+			    			<img class="portrary" src="images/acquire.png" alt="" />
+			    			<span class="fees"><img class="fee" src="images/fee.png" alt="" /><span class="num">100</span></span>
+			    		</div>
+			    		<div class="mui-col-xs-12 down">
+			    			<span class="cks"><img class="invited" src="images/de.png" alt="" /><span class="ck">受邀</span></span>
+			    		</div>
+			    	</div>
+			    </li>
+			    <li class="mui-table-view-cell mui-media matter">
+			    	<div class="mui-col-xs-2 unit">
+			    		<img class=" pic" src="images/male.png">
+			    	</div>
+			    	<div class="mui-col-xs-4 unit mid">
+			    		<div class="mui-col-xs-12">
+			    			我
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/pro.png" alt="" />
+			    			<span class="eat">吃饭</span>
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/time.png" alt="" />
+			    			<span class="eat">14:35</span>
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/position.png" alt="" />
+			    			<span class="eat">盘龙区</span>
+			    		</div>
+			    		<div class="mui-col-xs-12">
+			    			<img class="picture" src="images/distance.png" alt="" /> 
+			    			<span class="eat">距离18km</span>
+			    		</div>
+			    	</div>
+			    	<div class="mui-col-xs-5 unit">
+			    		<div class="mui-col-xs-12">
+			    			<span class="gender"><img class="fe" src="images/man-1.png" alt="" /><span class="age">23</span></span>
+			    			<img class="portrary" src="images/acquire.png" alt="" />
+			    			<span class="fees"><img class="fee" src="images/fee.png" alt="" /><span class="num">100</span></span>
+			    		</div>
+			    		<div class="mui-col-xs-12 down">
+			    			<span class="cks"><img class="invited" src="images/de.png" alt="" /><span class="ck">受邀</span></span>
+			    		</div>
+			    	</div>
+			    </li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+	</body>
+</html>

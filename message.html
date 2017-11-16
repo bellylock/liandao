@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+    	.mui-content{margin-top:7%;background: white;padding-bottom: 1%;}
+    	.mui-table-view:before{background-color: transparent;}
+    	.mui-table-view:after{background-color: transparent;}
+    	.view{background: transparent !important;margin-bottom: 13%;}
+    	.views{background: transparent !important;margin-bottom: 13%;margin-top: 13%;}
+    	.cell{position: relative;line-height: 33px;background: #ccc;width: 90%;margin-left: 4%;}
+    	.pic{position: absolute;width: 10%;left: 5%;top: -50%;border-radius: 18px;z-index: 100;}
+    	.pics{position: absolute;width: 10%;left: 5%;top: -20%;border-radius: 18px;z-index: 100;}
+    	.name{display: inline-block;position: absolute;top: -35%;left: 16%; z-index: 100;}
+    	.names{display: inline-block;position: absolute; top: -15%;left: 16%;}
+    	.date{display: inline-block;position: absolute;top: -36%;left: 70%; z-index: 100;}
+    	.dates{display: inline-block;position: absolute;top: -15%;left: 70%; z-index: 100;}
+    	.return{color: yellow;font-size:20px ;}
+    	.backword{color: #000;}
+    </style>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">消息区</h1>
+    </header>
+    <div class="mui-content">
+    	<ul class="mui-table-view view">
+    		<img class="pic" src="images/dog-1.jpg" alt="" />
+    		<span class="name">小小</span>
+    		<span class="date">2017-11-02</span>
+    	    <li class="mui-table-view-cell cell">
+    	                   好想一起吃个饭儿，可惜没人陪~~~
+    	    </li>
+    	</ul>
+    	<ul class="mui-table-view">
+    		<img class="pics" src="images/dog-2.jpg" alt="" />
+    		<span class="names">桥西123</span>
+    		<span class="dates">2017-11-02</span>
+    	    <li class="mui-table-view-cell cell">
+    	                     不用加料酒去腥味嘛
+    	        <hr>
+    	        <p class="return">朋友回复：</p>
+    	        <p class="backword">这个可以有···</p>
+    	    </li>
+    	</ul>
+    	<ul class="mui-table-view views">
+    		<img class="pics" src="images/dog-3.jpg" alt="" />
+    		<span class="names">吃了半个西瓜</span>
+    		<span class="dates">2017-11-02</span>
+    	    <li class="mui-table-view-cell cell">
+    	                    有没有唱歌的走起！
+    	        <hr>
+    	        <p class="return">朋友回复：</p>
+    	        <p class="backword">云南印象走起如何啊</p>
+    	    </li>
+    	</ul>
+    	<ul class="mui-table-view views">
+    		<img class="pics" src="images/dog-4.jpg" alt="" />
+    		<span class="names">吃了半个西瓜</span>
+    		<span class="dates">2017-11-02</span>
+    	    <li class="mui-table-view-cell cell">
+    	                    无聊的周末没人陪，可有伴侣相陪！！！
+    	        <hr>
+    	        <p class="return">朋友回复：</p>
+    	        <p class="backword">丽江玩儿起，可否</p>
+    	    </li>
+    	</ul>
+    </div>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+    </script>
+</body>
+</html>

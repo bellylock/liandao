@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script type="text/javascript" src="js/mui.min.js"></script> 
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <style type="text/css">
+    	.mui-content{background: #fff;margin-top:10px;}
+    	.mui-bar{background: white;display: block;}
+    	.left{width: 50px;}
+    	.person{width: 100%;margin-top: 10px;margin-left: 10px;}
+    	.ser{width: 8%;float: right;margin-right: 10px;margin-top: 18px;}
+    	.main{margin-top: 20px;border-top: none;}
+    	.mui-table-view-cell{padding-top: 15px;padding-bottom: 10px;}
+    	.game{display: block;margin-top: -33px;margin-left: 60px;margin-bottom: 10px;}
+    	.mui-table-view:before{position: relative;}
+    	.mui-table-view-cell:after{right: 20px;}
+    	.mui-table-view:after{left: 7%;}
+    	.img{width: 10%;}
+    	.unit4{padding-left: 0;padding-right: 0;list-style: none;text-align: center;}
+    	.sidebar{background: white;}
+    	.side{width: 12%;}
+    	.side-text{display: block;margin-left: 38px;margin-top: -28px;}
+    	.unit{list-style: none;margin-top: -2%;}
+    	.image{width: 50px;margin-left: 5px;margin-top: 3px;}
+    	.img-title{background: #ccc;width: 60px;height: 60px;border-radius: 30px;margin-left: 100px;margin-top: 50px;}
+    	.account{margin-top: 10px;margin-left: 100px;color: #333;margin-bottom: 20px;}
+    	.set{margin-top: 65px;}
+    	.side-bottom{width: 70%;}
+    	.bottom{width: 25%;float: left;}
+    	.bottom-first{margin-left: 10%;}
+    </style>
+    <!-- 主界面菜单同时移动 -->
+        <!-- 侧滑导航根容器 -->
+        <div class="mui-off-canvas-wrap mui-draggable">
+            <!-- 主页面容器 -->
+            <div class="mui-inner-wrap">
+                <!-- 菜单容器 -->
+                <aside class="mui-off-canvas-left" id="offCanvasSide">
+                    <div class="mui-scroll-wrapper sidebar">
+                        <div class="mui-scroll">
+                            <!-- 菜单具体展示内容 -->
+                            <div class="mui-row">
+					        	<div class="mui-col-sm-6 mui-col-xs-12">
+					        		<h1 class="img-title" id="portrayal"><img class="image" src="images/per-1.png" alt="" /></h1>
+					        		<p class="account">会飞的鱼</p>
+					        	</div>
+						        <div class="mui-col-sm-6 mui-col-xs-12">
+						            <li class="mui-table-view-cell unit" id="invited">
+						                <img class="side" src="images/invite.png" alt="" />
+						                <span class="side-text" id="invite">邀约</span>
+						            </li>
+						        </div>
+						        <div class="mui-col-sm-6 mui-col-xs-12">
+						            <li class="mui-table-view-cell unit">
+						                <img class="side" src="images/message.png" alt="" />
+						                <span class="side-text">消息</span>
+						            </li>
+						        </div>
+						        <div class="mui-col-sm-6 mui-col-xs-12">
+						            <li class="mui-table-view-cell unit">
+						                <img class="side" src="images/account.png" alt="" />
+						                <span class="side-text">账户</span>
+						            </li>
+						        </div>
+						        <div class="mui-col-sm-6 mui-col-xs-12">
+						            <li class="mui-table-view-cell unit">
+						                <img class="side" src="images/acquire.png" alt="" />
+						                <span class="side-text">获取认证标示</span>
+						            </li>
+						        </div>
+						        <div class="mui-col-sm-6 mui-col-xs-12">
+						            <li class="mui-table-view-cell unit">
+						                <img class="side" src="images/advice.png" alt="" />
+						                <span class="side-text">意见反馈</span>
+						            </li>
+						        </div>
+						        <div class="mui-col-sm-6 mui-col-xs-12">
+						            <li class="mui-table-view-cell unit">
+						                <img class="side" src="images/arrange.png" alt="" />
+						                <span class="side-text">推荐好友</span>
+						            </li>
+						        </div>
+						        <div class="mui-col-sm-6 mui-col-xs-12 set">
+						        	<div class="mui-col-xs-3 bottom bottom-first" id="set">
+						        		<li class="mui-table-view-cell unit4">
+						        			<img class="side-bottom" src="images/set.png" alt="" />
+						        			<p>设置</p>
+						        		</li>
+						        	</div>
+						        	<div class="mui-col-xs-3 bottom" id="issue">
+						        		<li class="mui-table-view-cell unit4">
+						        			<img class="side-bottom" src="images/help.png" alt="" />
+						        			<p>常见问题</p>
+						        		</li>
+						        	</div>
+						        	<div class="mui-col-xs-3 bottom">
+						        		<li class="mui-table-view-cell unit4" id="aa">
+						        			<img class="side-bottom" src="images/exit.png" alt="" />
+						        			<p >退出</p>
+						        		</li>
+						        	</div>
+						        </div>
+            				</div>
+                        </div>
+                    </div>
+                </aside>
+                <!-- 主页面标题 -->
+                <header class="mui-bar mui-bar-nav">
+                    <a class="mui-icon  mui-pull-left left" href="#offCanvasSide">
+                    	<img class="person" src="images/per.png" alt="" />
+						<!--<img class="ser" src="images/search.png" alt="" />-->
+                    </a>
+                    <a href="#"><img class="ser" src="images/search.png" alt="" /></a>
+                </header>
+                <!-- 主页面内容容器 -->
+                <div class="mui-content mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 主界面具体展示内容 -->
+		                <div class="mui-content">
+							<div id="slider" class="mui-slider" >
+							  <div class="mui-slider-group mui-slider-loop">
+							    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							    <div class="mui-slider-item mui-slider-item-duplicate">
+							      <a href="#">
+							        <img class="banner" src="images/banner.png">
+							      </a>
+							    </div>
+							    <!-- 第一张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img class="banner" src="images/banner.png">
+							      </a>
+							    </div>
+							    <!-- 第二张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img class="banner" src="images/banner.png">
+							      </a>
+							    </div>
+							    <!-- 第三张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img class="banner" src="images/banner.png">
+							      </a>
+							    </div>
+							    <!-- 第四张 -->
+							    <div class="mui-slider-item">
+							      <a href="#">
+							        <img class="banner" src="images/banner.png">
+							      </a>
+							    </div>
+							    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							    <div class="mui-slider-item mui-slider-item-duplicate">
+							      <a href="#">
+							        <img class="banner" src="images/banner.png">
+							      </a>
+							    </div>
+							  </div>
+							  <div class="mui-slider-indicator">
+							    <div class="mui-indicator mui-active"></div>
+							    <div class="mui-indicator"></div>
+							    <div class="mui-indicator"></div>
+							    <div class="mui-indicator"></div>
+							  </div>
+							</div>
+							<ul class="mui-table-view main">
+							    <li class="mui-table-view-cell first">
+							        <img class="img" src="images/cro.png" alt="" />
+							        <span class="game">游戏</span>
+							    </li>
+							    <li class="mui-table-view-cell">
+							        <img class="img" src="images/business.png" alt="" />
+							        <span class="game">身边商圈</span>
+							    </li>
+							    <li class="mui-table-view-cell">
+							        <img class="img" src="images/honest.png" alt="" />
+							        <span class="game">诚信榜</span>
+							    </li>
+							</ul>
+		    			</div>
+                    </div>
+                </div>
+           	 <div class="mui-off-canvas-backdrop"></div>
+            </div>
+        </div>
+    <script type="text/javascript">
+    mui.init();
+    document.getElementById("invite").addEventListener('tap',function(){
+    	mui.openWindow({ 
+    		id:'acceptdate.html',
+    		url:'acceptdate.html'
+    	})
+    });
+    document.getElementById("portrayal").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'edit.html',
+    		url:'edit.html'
+    	})
+    });
+    document.getElementById("set").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'set.html',
+    		url:'set.html'
+    	})
+    });
+    document.getElementById("issue").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'problem.html',
+    		url:'problem.html'
+    	})
+    });
+    document.getElementById("aa").addEventListener('tap',function(){
+    	mui.openWindow({
+    		id:'login.html',
+    		url:'login.html'
+    	})
+    })
+    </script>
+</body>
+</html>

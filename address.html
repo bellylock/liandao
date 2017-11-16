@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script type="text/javascript" src="js/mui.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+    	.mui-content{background: white;}
+    	.c2{margin-top: 5%;}
+    	.c10{margin-top: 5%;width: 75%;padding-left: 5%;border: none !important;}
+    	select{-webkit-appearance:menulist !important;}
+    	.select{padding-left: 5px !important;}
+    	.input{ padding-left: 15% !important; background: url(images/search-2.png) no-repeat !important;
+    	background-position: 6% 52% !important;border: 1px solid #eef3f1 !important;}
+    	.nearly{margin-left: 15%;padding-left:30% !important;}
+    	.line{margin-left: 28%;padding-left:30% !important;}
+    	.box{width: 20%;float: left;}
+    	.detail{width: 80%;float: left;}
+    	.pic{width: 55px;height: 75px;}
+    	.left{float: left;}
+    	.right{float: right; width: 26%;}
+    	.localtion{width: 18%;}
+    	.average{margin-left: 5%;}
+    	.mui-ellipsis{margin-bottom: 2% !important;margin-top: 2%;}
+    </style>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">约玩地点</h1>
+	</header>
+    <div class="mui-content">
+    	<div class="mui-row">
+    	    <div class="mui-col-xs-2 c2">
+    	    	<div class="mui-input-row">
+					<select class="select">
+						<option value="1" selected="true">昆明</option>
+						<option value="2">五华</option>
+						<option value="3">盘龙</option>
+						<option value="4">西山</option>
+						<option value="5">官渡</option>
+						<option value="6">呈贡</option>
+					</select>
+				</div>
+    	    </div>
+    	    <div class="mui-col-xs-10 c10">
+    	    	<input type="text" class="input" placeholder="请输入店名/地址快速查询"/>
+    	    </div>
+    	    <div class="mui-col-xs-5">
+    	    	<select name="" class="nearly">
+    	    		<option value="">附近</option>
+    	    		<option value="">麻婆小吃</option>
+    	    		<option value="">驴肉火烧</option>
+    	    		<option value="">宫保鸡丁</option>
+    	    		<option value="">鱼香肉丝</option>
+    	    	</select>
+    	    </div>
+    	    <div class="mui-col-xs-5">
+    	    	<select name="" class="line">
+    	    		<option value="">智能排序</option>
+    	    		<option value="">按价格排</option>
+    	    		<option value="">按综合排</option>
+    	    		<option value="">按服务排</option>
+    	    		<option value="">按地点排</option>
+    	    	</select>
+    	    </div>
+    	</div>
+    	<ul class="mui-table-view">
+    	    <li class="mui-table-view-cell mui-media address_detail" id="gold">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-1.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        金胞粮格调曹婷
+    	                <p class="mui-ellipsis">评价四星 <span class="average">人均：￥45</span></p>
+    	                <p>
+    	                	<span class="left">西山区，西山区政府</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.03km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="pleasure">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-2.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        悦园小厨
+    	                <p class="mui-ellipsis">评价五星 <span class="average">人均：￥21</span></p>
+    	                <p>
+    	                	<span class="left">西山区</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.05km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="private">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-3.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        家常私房菜
+    	                <p class="mui-ellipsis">评价三星<span class="average">人均：￥30</span></p>
+    	                <p>
+    	                	<span class="left">五华区南屏街</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.1km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="chicken">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-4.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        食必思黄焖鸡米饭
+    	                <p class="mui-ellipsis">评价四星<span class="average">人均：￥15</span></p>
+    	                <p>
+    	                	<span class="left">盘龙区，席子营</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.8km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="lake">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-5.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                       小翠滇西小炒
+    	                <p class="mui-ellipsis">评价四星<span class="average">人均：￥65</span></p>
+    	                <p>
+    	                	<span class="left">西山区，翠湖</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />2.07km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="wheat">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-1.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        今麦郎饭馆
+    	                <p class="mui-ellipsis">评价四星<span class="average">人均：￥30</span></p>
+    	                <p>
+    	                	<span class="left">官渡区，世纪城</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />3.3km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="red">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-2.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                       季季红小火锅
+    	                <p class="mui-ellipsis">评价四星<span class="average">人均：￥120</span></p>
+    	                <p>
+    	                	<span class="left">五华区，五华南强街</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />1.5km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="hot">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-3.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        川菜馆
+    	                <p class="mui-ellipsis">评价三星<span class="average">人均：￥75</span></p>
+    	                <p>
+    	                	<span class="left">呈贡区，火车南站北</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.09km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	    <li class="mui-table-view-cell mui-media address_detail" id="south">
+    	        <a href="javascript:;">
+    	            <div class="box">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-4.jpg">
+    	            </div>
+    	            <div class="mui-media-body detail">
+    	                                        河南人家
+    	                <p class="mui-ellipsis">评价四星<span class="average">人均：￥50</span></p>
+    	                <p>
+    	                	<span class="left">盘龙区，东风广场</span>
+    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.3km</span>
+    	                </p>
+    	            </div>
+    	        </a>
+    	    </li>
+    	</ul>
+    </div>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init();
+//  mui(".address_detail").on('tap','.mui-table-view-cell',function(){
+//  	mui.openWindow({
+//  		class:'address-detail.html',
+//  		url:'address-detail.html'
+//  	})
+//  })
+	document.getElementById("gold").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-1',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("pleasure").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-2',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("private").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-3',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("chicken").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-4',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("lake").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-5',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("wheat").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-6',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("red").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-7',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("hot").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-8',
+			url:'address-detail.html'
+		})
+	});
+	document.getElementById("south").addEventListener('tap',function(){
+		mui.openWindow({
+			id:'address-9',
+			url:'address-detail.html'
+		})
+	})
+    </script>
+</body>
+</html>

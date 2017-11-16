@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="a_bing" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>恋道圈子</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    
+    <style type="text/css">
+    	.banner{background: white;}
+    	.banner img{width: 100%;height: 32%;padding-bottom: -5px;}
+    	.mui-bar-header-secondary{padding-top: 20px;background: #fff;}
+    	.mui-bar-header-secondary .left{ float: left !important;margin-left: 25px !important;
+    	margin-bottom: 15px !important;}
+    	.mui-bar-header-secondary .right{float: right;margin-right: 25px;}
+    	.mui-grid-9{margin-bottom: 100px;background: #fff !important;margin-top: -8px !important;
+    	border-color: white !important;border-color:#595B57 !important;padding-top: 20px!important;
+    	padding-left: 40px !important;border: none !important;padding-right: 40px !important;
+    	padding-bottom: 31px !important;padding-bottom: 140px !important;margin-bottom: 12% !important;}
+    	.mui-content{border-color: transparent;}
+    	.mui-content ul li{border-radius: 50px;margin-left: 10px;background:rgba(100,170,20,1) !important;}
+    	.mui-content ul li span{font-size: 30px !important;}
+    	.mui-content ul li.first{margin-left: 115px !important;width: 70px;height: 70px;border-radius: 35px;}
+    	.mui-content ul li.sec{margin-top: 75px !important;margin-left: 30px !important; width:70px;height: 70px;
+    	border-radius: 35px;} 
+    	.mui-content ul li.third{margin-top: -65px !important;margin-left: 25px !important; width:70px;height: 70px;
+    	border-radius: 35px;}
+    	.mui-content ul li.four{margin-left:10px !important;width:90px;height:90px;border-radius: 45px;
+    	background: rgba(180,40,30,1) !important;}   /*255,98,98*/
+    	.mui-media-body{ margin-top: -15px !important;}  
+    	.pic{margin-top: -80px !important;}
+    	#footernav{background: #fff;padding-bottom: 90px !important;padding-top: 10px;border-color: #fff !important;}
+    	.banner{width: 100%;height: 200px;} 
+    	.mui-slider{width: 100%;height: 200px;}
+    	.person{width: 9%;color:#ccc !important;margin-left:15px;margin-top: 8px;}
+    	.local{color: #ccc !important; font-size: 20px;float: right;margin-right: 20px;margin-top: 13px; }
+    	.circle{width: 20%;}
+    	.com{width: 20%;}
+    	.mission{width: 80%;display: block;margin-left: 2px;color: white;}
+    	.sep{width: 85%;margin-top: -5%!important;}
+    	.unit1{font-size: 12px;color: #fff;margin-top: -2px;margin-left:-8px;display: block;width: 50px;}
+    	.unit2{font-size: 12px;color: #fff;display: block;margin-top: -5%;}
+    	.unit3{font-size: 12px;color: #fff;margin-top: -2px;margin-left:-6px;display: block;width: 50px;}
+    	.unit4{padding-left: 0;padding-right: 0;list-style: none;text-align: center;}
+    	.mui-bar{-webkit-box-shadow: none;}
+    	.sidebar{background: white;}
+    	.side{width: 12%;}
+    	.side-text{display: block;margin-left: 38px;margin-top: -28px;}
+    	.unit{list-style: none;}
+    	.image{width: 50px;margin-left: 5px;margin-top: 3px;}
+    	.img-title{background: #ccc;width: 60px;height: 60px;border-radius: 30px;margin-left: 100px;margin-top: 50px;}
+    	.account{margin-top: 10px;margin-left: 100px;color: #333;margin-bottom: 20px;}
+    	.set{margin-top: 65px;}
+    	.side-bottom{width: 70%;}
+    	.bottom{width: 25%;float: left;}
+    	.bottom-first{margin-left: 10%;}
+    </style>
+</head>
+<body>
+	<!-- 主界面不动、菜单移动 -->
+	<!-- 侧滑导航根容器 -->
+	<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+	  <!-- 菜单容器 -->
+	  <aside class="mui-off-canvas-left" id="offCanvasSide">
+	    <div class="mui-scroll-wrapper sidebar">
+	      <div class="mui-scroll">
+	        <!-- 菜单具体展示内容 -->
+	        <div class="mui-row">
+	        	<div class="mui-col-sm-6 mui-col-xs-12">
+	        		<h1 class="img-title" id="portrayal"><img class="image" src="images/per-1.png" alt="" /></h1>
+	        		<p class="account">会飞的鱼</p>
+	        	</div>
+		        <div class="mui-col-sm-6 mui-col-xs-12">
+		            <li class="mui-table-view-cell unit" id="invited">
+		                <img class="side" src="images/invite.png" alt="" />
+		                <span class="side-text">邀约</span>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-12">
+		            <li class="mui-table-view-cell unit" id="msg">
+		                <img class="side" src="images/message.png" alt="" />
+		                <span class="side-text">消息</span>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-12">
+		            <li class="mui-table-view-cell unit" id="account">
+		                <img class="side" src="images/account.png" alt="" />
+		                <span class="side-text">账户</span>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-12">
+		            <li class="mui-table-view-cell unit" id="identify">
+		                <img class="side" src="images/acquire.png" alt="" />
+		                <span class="side-text">获取认证标示</span>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-12">
+		            <li class="mui-table-view-cell unit" id="advice">
+		                <img class="side" src="images/advice.png" alt="" />
+		                <span class="side-text">意见反馈</span>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-12">
+		            <li class="mui-table-view-cell unit" id="friend">
+		                <img class="side" src="images/arrange.png" alt="" />
+		                <span class="side-text">推荐好友</span>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-12 set">
+		        	<div class="mui-col-xs-3 bottom bottom-first">
+		        		<li class="mui-table-view-cell unit4" id="set">
+		        			<img class="side-bottom" src="images/set.png" alt="" />
+		        			<p>设置</p>
+		        		</li>
+		        	</div>
+		        	<div class="mui-col-xs-3 bottom">
+		        		<li class="mui-table-view-cell unit4" id="issue">
+		        			<img class="side-bottom" src="images/help.png" alt="" />
+		        			<p>常见问题</p>
+		        		</li>
+		        	</div>
+		        	<div class="mui-col-xs-3 bottom">
+		        		<li class="mui-table-view-cell unit4" id="exit">
+		        			<img class="side-bottom" src="images/exit.png" alt="" />
+		        			<p>退出</p>
+		        		</li>
+		        	</div>
+		        </div>
+            </div>
+	      </div>
+	    </div>
+	  </aside>
+	  <!-- 主页面容器 -->
+	  <div class="mui-inner-wrap">
+	    <!-- 主页面标题 -->
+	    <header class="mui-bar mui-bar-nav">
+	      <a class="" href="#offCanvasSide"><img class="person" src="images/per.png" alt="" /></a>
+	      <a class="local" href="#">昆明</a>
+	    </header>
+	    <div class="mui-content mui-scroll-wrapper">
+	      <div class="mui-scroll">
+	        <!-- 主界面具体展示内容 -->
+	        <div id="slider" class="mui-slider" >
+	  <div class="mui-slider-group mui-slider-loop">
+	    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+	    <div class="mui-slider-item mui-slider-item-duplicate">
+	      <a href="#">
+	        <img class="banner" src="images/banner.png">
+	      </a>
+	    </div>
+	    <!-- 第一张 -->
+	    <div class="mui-slider-item">
+	      <a href="#">
+	        <img class="banner" src="images/banner.png">
+	      </a>
+	    </div>
+	    <!-- 第二张 -->
+	    <div class="mui-slider-item">
+	      <a href="#">
+	        <img class="banner" src="images/banner.png">
+	      </a>
+	    </div>
+	    <!-- 第三张 -->
+	    <div class="mui-slider-item">
+	      <a href="#">
+	        <img class="banner" src="images/banner.png">
+	      </a>
+	    </div>
+	    <!-- 第四张 -->
+	    <div class="mui-slider-item">
+	      <a href="#">
+	        <img class="banner" src="images/banner.png">
+	      </a>
+	    </div>
+	    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+	    <div class="mui-slider-item mui-slider-item-duplicate">
+	      <a href="#">
+	        <img class="banner" src="images/banner.png">
+	      </a>
+	    </div>
+	  </div>
+	  <div class="mui-slider-indicator">
+	    <div class="mui-indicator mui-active"></div>
+	    <div class="mui-indicator"></div>
+	    <div class="mui-indicator"></div>
+	    <div class="mui-indicator"></div>
+	  </div>
+	</div>
+	<ul class="mui-table-view mui-grid-view mui-grid-9">
+	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 first" id="mission">
+		<img class="mission" src="images/receive.png" alt="" />
+	    <a href="#">
+	        <div class="mui-media-body"><a class="unit3" href="#">赴约</a></div>
+	    </a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 sec" id="message">
+		<img class="mission" src="images/people-1.png" alt="" />
+	    <a href="#">
+	        <div class="mui-media-body"><a class="unit1" href="#">消息</a></div>
+	    </a>
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 third" id="nearby">
+		<img class="mission" src="images/text.png" alt="" />
+	    <a href="#">
+	        <div class="mui-media-body"><a class="unit1" href="#">附近</a></div>
+	    </a>
+		
+		
+	</li>
+	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 four" id="invite">
+		<img class="sep" src="images/mission-1.png" alt="" />
+	    <a href="#">
+	        <div class="mui-media-body"><a class="unit2 last" href="#">邀请</a></div>
+	    </a>
+	</li>
+	    </ul>
+	
+	<nav class="mui-bar mui-bar-tab" id="footernav">
+        <a id="defaultTab" class="mui-tab-item" href="index.html">
+            <img class="com" src="images/compass.png" alt="" />
+            <p class="mui-tab-label">发现</p> 
+            <!--<a href="login.html">发现</a>--> 
+        </a>
+        <a class="mui-tab-item" href="nearby.html" id="nearby">
+            <img class="circle" src="images/circle.png" alt="" />
+            <p class="mui-tab-label">圈子</p>
+        </a>
+   </nav>
+	      </div>
+	    </div>  
+	    <div class="mui-off-canvas-backdrop"></div>
+	  </div>
+	</div>
+	
+	<script type="text/javascript" charset="utf-8">
+		mui.init({
+			
+		});
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+			interval:2000
+		});
+		var subpages = ['login.html'];
+		document.getElementById("defaultTab").addEventListener('tap', function(){
+			mui.openWindow({
+				id:'discover.html', 
+				url:'discover.html'
+			})
+		});
+		document.getElementById("invite").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'express.html',
+				url:'express.html'
+			})
+		});
+		document.getElementById("invited").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'acceptdate.html',
+				url:'acceptdate.html'
+			})
+		});
+		document.getElementById("portrayal").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'edit.html',
+				url:'edit.html'
+			})
+		});
+		document.getElementById("exit").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'login.html',
+				url:'login.html'
+			})
+		});
+		document.querySelector(".unit4").addEventListener('tap',function(){
+			mui.openWindow({
+				class:'set.html',
+				url:'set.html'
+			})
+		});
+		document.getElementById("issue").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'problem.html',
+				url:'problem.html'
+			})
+		});
+		document.getElementById("mission").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'mission',
+				url:'mission.html'
+			})
+		});
+		document.getElementById("nearby").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'nearby',
+				url:'nearby.html'
+			})
+		});
+		document.getElementById("message").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'msgs',
+				url:'message.html'
+			})
+		});
+		document.getElementById("msg").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'mess',
+				url:'message.html'
+			})
+		});
+		document.getElementById("account").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'account',
+				url:'account.html'
+			})
+		});
+		document.getElementById("identify").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'identifys',
+				url:'identify.html'
+			})
+		});
+		document.getElementById("advice").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'adv',
+				url:'advice.html'
+			})
+		});
+		document.getElementById("friend").addEventListener('tap',function(){
+			mui.openWindow({
+				id:'fri',
+				url:'friends.html'
+			})
+		})
+		
+    </script>
+</body>
+</html>

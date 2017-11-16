@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>编辑头像</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/mui.min.js"></script>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <style type="text/css">
+    	body{background: white !important;}
+    	.back{width: 10%;margin-top: 12px;}
+    	.refresh{color: #666 !important;margin-top: 13px;float: right;margin-right: 20px;}
+    	.top{width: 100%;background: red;text-align: center;padding: 20px 0 25px 0;background: #dededc;position: relative;}
+    	.eyes{width: 40%;margin-top: 20px;}
+    	.per{position: absolute;top: 80%;left: 41%;border: 1px solid #666;width: 70px;height: 70px;padding: 8px;
+    	border-radius: 35px;background: #dededc;}
+    	.mui-table-view{margin-top: 60px;margin-bottom: 5%;}
+    	.name{font-style: normal;}
+    	.whole{background: grey;padding: 5px 10px 1px 10px;border-radius: 5px;margin-left: 20px;}
+    	.whole img{width: 5%;}
+    	.num{margin-left: 10px;font-size: 17px;color: white;}
+    	.local{width: 4%;}
+    	.mui-table-view-cell{padding-left: 40px;padding-top:20px; padding-bottom: 15px; border-top: none !important;}
+    	.mui-table-view-cell p{margin-top: 5px;}
+    	.last{margin-top: 15px !important;}
+    	.posi{margin-left: 10px;color: #333;}
+    	.mui-table-view-cell:after{right: 7%;left: 8%;}
+    	.mui-table-view:after{right: 7%;left: 8%;}
+    	.mui-bar {display: block !important;}
+    	.mui-content{background: white;}
+    	.skill{margin-left: 20%;}
+    	.skill p{margin-left: 17%;}
+    	.identy{margin-left: 70%;margin-top: -28%;display: block;}
+    	.first{width: 11%;}
+    	.second{width: 45%;}
+    	.mui-table-view:before{background: transparent;}
+    </style>
+    <header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back  mui-pull-left"><img class="back" src="images/return.png" alt="" /></a>
+		<a class="refresh" href="edit-file.html">编辑</a> 
+	</header>
+	<div class="mui-content">
+		<div class="top">
+			<img class="eyes" src="images/head.png" alt="" />
+			<img class="per" src="images/per-1.png" alt="" />
+		</div>
+		<ul class="mui-table-view">
+		    <li class="mui-table-view-cell">
+		        <em class="name">会飞的鱼</em>
+		        <span class="whole"><img src="images/man-1.png" alt="" /><span class="num">23</span></span>
+		        <p>双子座</p>
+		        <p>165cm | 53kg</p>
+		        <p class="last"><img class="local" src="images/localtion.png" alt="" /><span class="posi">昆明</span></p>
+		    </li>
+		    <li class="mui-table-view-cell">
+		        <span>个性签名</span>
+		        <p>hello我是会飞的鱼，喜欢吃美食，健身玩游戏</p>
+		        <p>开朗活泼，旅游，户外</p>
+		    </li>
+		</ul>
+		<div class="menu">
+			<span class="skill">
+				<img class="first" src="images/skill.png" alt="" />
+				<p>技能发布</p>
+			</span>
+			<span class="identy">
+				<img class="second" src="images/acquire.png" alt="" />
+				<p>身份认证</p>
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+    mui.init()
+    </script>
+</body>
+</html>
