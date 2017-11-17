@@ -1,0 +1,23 @@
+[
+	{
+		"title":"images/list-1.jpg",
+		"text":"上海佘山营销进化论",
+		"price":"images/money_little.jpg",
+		"num":"X 100",
+		"change":"兑换"
+	},
+	{
+		"title":"images/list-2.jpg",
+		"text":"云南保山365业绩工程",
+		"price":"images/money_little.jpg",
+		"num":"X 100",
+		"change":"兑换"
+	},
+	{
+		"title":"images/list-3.jpg",
+		"text":"武汉市临水镇达晚霞",
+		"price":"images/money_little.jpg",
+		"num":"X 100",
+		"change":"兑换"
+	}
+]

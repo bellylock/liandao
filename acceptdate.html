@@ -7,18 +7,19 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<!--标准mui.css-->
-		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/mui.min.css"> 
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
 		<!--App自定义的css-->
 		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/mui.min.js"></script>
 	</head>
-
 	<body>
 		<style type="text/css">
+			#content{margin-top: 3%;}
 			.refresh{display: block;margin-top: 13px;float: right;margin-right: 15px;color: #666 !important;}
 			.back{width: 9%;margin-top: 13px;}
 			.matter{line-height: 33px;}
-			.matter-first{margin-top: 11%;}
+			/*.matter-first{margin-top: 11%;}*/
 			.pic{width:90px;height: 130px;margin-left: -30%;margin-top: 20px;}
 			.unit{float: left;}
 			.picture{width: 15%;}
@@ -38,51 +39,50 @@
 			.ck{margin-top: -40px;margin-left: 10px;font-size: 18px;display:inline-block;color: white;}
 			.mui-bar {display: block !important;}
 		</style>
-	
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back  mui-pull-left"><img class="back" src="images/return.png" alt="" /></a>
 			<h1 class="mui-title">我的赴约</h1>
 			<a class="refresh">刷新</a>
 		</header>
-		<div class="mui-content">
+		<div class="mui-content" id="content">
 			<ul class="mui-table-view">
-			    <li class="mui-table-view-cell mui-media matter matter-first">
+			    <li class="mui-table-view-cell mui-media matter matter-first" v-for="item in list">
 			    	<div class="mui-col-xs-2 unit">
-			    		<img class=" pic" src="images/female.png">
+			    		<img class=" pic" :src="item.img">
 			    	</div>
-			    	<div class="mui-col-xs-4 unit mid">
+			    	<div class="mui-col-xs-4 unit mid" >
 			    		<div class="mui-col-xs-12">
-			    			我
+			    			{{item.name}}
 			    		</div>
 			    		<div class="mui-col-xs-12">
-			    			<img class="picture" src="images/pro.png" alt="" />
-			    			<span class="eat">吃饭</span>
+			    			<img class="picture" :src="item.food" alt="" />
+			    			<span class="eat">{{item.text}}</span>
 			    		</div>
 			    		<div class="mui-col-xs-12">
-			    			<img class="picture" src="images/time.png" alt="" />
-			    			<span class="eat">14:35</span>
+			    			<img class="picture" :src="item.hour" alt="" />
+			    			<span class="eat">{{item.time}}</span>
 			    		</div>
 			    		<div class="mui-col-xs-12">
-			    			<img class="picture" src="images/position.png" alt="" />
-			    			<span class="eat">盘龙区</span>
+			    			<img class="picture" :src="item.position" alt="" />
+			    			<span class="eat">{{item.place}}</span>
 			    		</div>
 			    		<div class="mui-col-xs-12">
-			    			<img class="picture" src="images/distance.png" alt="" />
-			    			<span class="eat">距离18km</span>
+			    			<img class="picture" :src="item.dis" alt="" />
+			    			<span class="eat">{{item.distance}}</span>
 			    		</div>
 			    	</div>
 			    	<div class="mui-col-xs-5 unit">
 			    		<div class="mui-col-xs-12">
-			    			<span class="gender"><img class="fe" src="images/fe.png" alt="" /><span class="age">23</span></span>
-			    			<img class="portrary" src="images/acquire.png" alt="" />
-			    			<span class="fees"><img class="fee" src="images/fee.png" alt="" /><span class="num">100</span></span>
+			    			<span class="gender"><img class="fe" :src="item.male" alt="" /><span class="age">{{item.age}}</span></span>
+			    			<img class="portrary" :src="item.card" alt="" />
+			    			<span class="fees"><img class="fee" :src="item.fee" alt="" /><span class="num">{{item.num}}</span></span>
 			    		</div>
 			    		<div class="mui-col-xs-12 down">
-			    			<span class="cks"><img class="invited" src="images/de.png" alt="" /><span class="ck">受邀</span></span>
+			    			<span class="cks"><img class="invited" :src="item.invited" alt="" /><span class="ck">{{item.ck}}</span></span>
 			    		</div>
 			    	</div>
 			    </li>
-			    <li class="mui-table-view-cell mui-media matter">
+			    <!--<li class="mui-table-view-cell mui-media matter">
 			    	<div class="mui-col-xs-2 unit">
 			    		<img class=" pic" src="images/male.png">
 			    	</div>
@@ -117,9 +117,31 @@
 			    			<span class="cks"><img class="invited" src="images/de.png" alt="" /><span class="ck">受邀</span></span>
 			    		</div>
 			    	</div>
-			    </li>
+			    </li>-->
 			</ul>
 		</div>
-		<script src="js/mui.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var app = new Vue({
+				el:'#content',
+				data:{
+					list:[]
+				},
+				mounted:function(){
+					var self = this;
+					mui.ajax({
+						url: "accept.json",
+						dataType: "json",
+	                    success: function(data){
+	                        self.list = data;
+	                    },
+	                    error: function(data){
+	                        console.log("读取json数据失败");
+	                    }
+	                });
+				}
+			})
+		</script>
 	</body>
 </html>

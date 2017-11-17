@@ -187,7 +187,9 @@
       "images/acquire.png",
       "images/fee.png",
       "images/de.png",
-      "images/man-1.png"
+      "images/man-1.png",
+      "js/vue.min.js",
+      "accept.json"
     ],
     "refer": []
   },
@@ -245,6 +247,7 @@
   "login-item.html": {
     "refer": [
       "main.html"
-    ]
+    ],
+    "resources": []
   }
 }

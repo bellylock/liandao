@@ -1,0 +1,38 @@
+[
+	{
+		"img":"images/img-1.jpg",
+		"text":"清风徐来 福建厦门",
+		"datepic":"images/date.png",
+		"date":"2017-05-19",
+		"name":"喵了个咪",
+		"namepic":"images/name.png",
+		"motto":"爱咋咋的",
+		"mottopic":"images/lable-block.png",
+		"do":"想吃饭",
+		"dopic":"images/iconfont-shanzi.png"
+	},
+	{
+		"img":"images/img-2.jpg",
+		"text":"水波不清  云南昆明",
+		"datepic":"images/date.png",
+		"date":"2017-09-06",
+		"name":"爱喝酒的虫",
+		"namepic":"images/name.png",
+		"motto":"敢不敢",
+		"mottopic":"images/lable-block.png",
+		"do":"解忧唯杜康",
+		"dopic":"images/iconfont-shanzi.png"
+	},
+	{
+		"img":"images/img-3.jpg",
+		"text":"红玫瑰",
+		"datepic":"images/date.png",
+		"date":"2017-10-28",
+		"name":"太师傅",
+		"namepic":"images/name.png",
+		"motto":"嗜好疯狂",
+		"mottopic":"images/lable-block.png",
+		"do":"人生就是折腾",
+		"dopic":"images/iconfont-shanzi.png"
+	}
+]

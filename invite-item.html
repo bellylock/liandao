@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 <body>
     <style type="text/css">
@@ -14,9 +15,9 @@
 		.back{width: 9%;margin-top: 13px;}
 		.content{margin-top:15%;}
 		.whole{list-style: none; border: 2px solid #ccc;margin-top: 2%;width:95%;margin-left: 2%;
-		border-radius: 8px;background: #fff;line-height: 90px;}
+		border-radius: 8px;background: #fff;line-height: 90px;margin-bottom: 3%;}
 		.half{float: left;}
-		.items{margin-top: 3%;}
+		.items{margin-bottom: 3%;}
 		.item-last{margin-bottom: 3%;}
 		.half-first{list-style: none; border: 2px solid #ccc;width:92%;margin-left: 4%;
 		border-radius: 8px;background: #fff;line-height: 40px;margin-right:8% !important;}
@@ -30,7 +31,7 @@
 		.tittle{font-size: 20px;margin-top: -2%;}
 		.vice{font-size: 12px;margin-top: -8%;color: #666;}
 		.backimage{background: url(images/background.png) no-repeat center;width: 90%;} 
-		.portrary{border-radius: 30px;}
+		.portrary{border-radius: 30px;z-index: 100000000 !important;}
 		.mui-bar .mui-title{right: 60px;left: 55px;}
     </style>
     
@@ -39,7 +40,7 @@
 		<h1 class="mui-title">邀请项目</h1>
 		<a class="refresh">刷新</a>
 	</header>
-	<div class="mui-card-content">
+	<div class="mui-card-content" id="content">
 		<div class="mui-content content">
 		    <div class="mui-row">
 		        <div class="mui-col-xs-12">
@@ -58,23 +59,23 @@
 		               </div>
 		            </li>
 		        </div>
-		        <div class="mui-col-xs-12 items">
+		        <div class="mui-col-xs-12 items" v-for="item in list">
 		        	<div class="mui-col-xs-6 half">
 			            <li class="mui-table-view-cell half-first ">
-			                <img class="portrary" src="images/food.png" alt="" />
-			                <h2 class="tittle">吃美食</h2>
-			                <p class="vice">唯有美食与你不可辜负</p>
+			                <img class="portrary" :src="item.img" alt="" />
+			                <h2 class="tittle">{{item.title}}</h2>
+			                <p class="vice">{{item.vice}}</p>
 			            </li>
 		        	</div>
 			        <div class="mui-col-xs-6 half">
 			            <li class="mui-table-view-cell half-second backimage">
-			                <img class="portrary" src="images/voice.png" alt="" />
-			                <h2 class="tittle">K歌</h2>
-			                <p class="vice">无音乐不朋友</p>
+			                <img class="portrary" :src="item.pic" alt="" />
+			                <h2 class="tittle">{{item.activity}}</h2>
+			                <p class="vice">{{item.do}}</p>
 			            </li>
 			        </div>
 		        </div>
-		        <div class="mui-col-xs-12 items">
+		        <!--<div class="mui-col-xs-12 items">
 		        	<div class="mui-col-xs-6 half">
 			            <li class="mui-table-view-cell half-first backimage">
 			                <img class="portrary" src="images/drink.png" alt="" />
@@ -121,13 +122,33 @@
 			                <p class="vice">我有酒，你有故事吗</p>
 			            </li>
 			        </div>
-		        </div>
+		        </div>-->
 		    </div>
 		</div>
 	</div>
     
     <script type="text/javascript">
-    mui.init()
+    mui.init();
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[],
+    		check: false
+    	},
+    	mounted:function(){
+			var self = this;
+			mui.ajax({
+				url: "invite-item.json",
+				dataType: "json",
+	            success: function(data){
+	                self.list = data;
+	            },
+	            error: function(data){
+	                console.log("读取json数据失败");
+	            }
+	        });
+		}
+    })
     </script>
 </body>
 </html>

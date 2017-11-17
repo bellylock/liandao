@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
-    <!--<script type="text/javascript" src="js/mui.min.js"></script>-->
+    <script type="text/javascript" src="js/mui.min.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 <body>
 <style type="text/css">
@@ -131,10 +132,9 @@
             </a>
         </header>
         <!-- 主页面内容容器 -->
-        <div class="mui-content mui-scroll-wrapper">
+        <div class="mui-content mui-scroll-wrapper" id="content">
             <div class="mui-scroll">
                 <!-- 主界面具体展示内容-->
-                <!--<div class="mui-content">-->
 					<div id="slider" class="mui-slider" >
 						<div class="mui-slider-group mui-slider-loop">
 							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
@@ -177,98 +177,56 @@
 					</div>
 				
 					<div class="mui-row">
-						<div class="mui-col-xs-12">
+						<div class="mui-col-xs-12" v-for="item in list">
 							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/food-1.png" alt="" />
-								<span class="matter">吃美食</span>
+								<img class="pic" :src="item.img" alt="" />
+								<span class="matter">{{item.text}}</span>
 							</div>
 							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/microphone.png" alt="" />
-								<span class="matter">K歌</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-12">
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/movie-1.png" alt="" />
-								<span class="matter">看电影</span>
-							</div>
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/game.png" alt="" />
-								<span class="matter">游戏</span>
-							</div>
-						</div>
-					    <div class="mui-col-xs-12">
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/wine.png" alt="" />
-								<span class="matter">喝一杯</span>
-							</div>
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/coffee.png" alt="" />
-								<span class="matter">喝咖啡</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-12">
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/muscle.png" alt="" />
-								<span class="matter">健身</span>
-							</div>
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/tree.png" alt="" />
-								<span class="matter">郊游</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-12">
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/party.png" alt="" />
-								<span class="matter">party</span>
-							</div>
-							<div class="mui-col-xs-6 c6">
-								<img class="pics" src="images/write.png" alt="" />
-								<span class="matters">项目自定义</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-12">
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/party.png" alt="" />
-								<span class="matter">party</span>
-							</div>
-							<div class="mui-col-xs-6 c6">
-								<img class="pics" src="images/write.png" alt="" />
-								<span class="matters">项目自定义</span>
-							</div>
-						</div>
-						<div class="mui-col-xs-12">
-							<div class="mui-col-xs-6 c6">
-								<img class="pic" src="images/party.png" alt="" />
-								<span class="matter">party</span>
-							</div>
-							<div class="mui-col-xs-6 c6">
-								<img class="pics" src="images/write.png" alt="" />
-								<span class="matters">项目自定义</span>
+								<img class="pic" :src="item.pic" alt="" />
+								<span class="matter">{{item.title}}</span>
 							</div>
 						</div>
 					</div>
-    			<!--</div>-->
             </div>
         </div>
         <div class="mui-off-canvas-backdrop"></div> 
         </div>
     </div>
     <script type="text/javascript">
-    mui.init();		
+    mui.init();	
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+			var self = this;
+			mui.ajax({
+				url: "express.json",
+				dataType: "json",
+	            success: function(data){
+	                self.list = data;
+	            },
+	            error: function(data){
+	                console.log("读取json数据失败");
+	            }
+	        });
+		}
+    });
     var gallery = mui('.mui-slider');
     gallery.slider({
     	interval:2000
     });
     mui('.mui-scroll-wrapper').scroll({
-//  	deceleration: 0.0005,
+    	deceleration: 0.0005,
     	scrollY: true, //是否竖向滚动
 		scrollX: false, //是否横向滚动
 		startX: 0, //初始化时滚动至x
 		startY: 0, //初始化时滚动至y
 		indicators: false, //是否显示滚动条
 		deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
-//		bounce: true //是否启用回弹
+		bounce: true //是否启用回弹
 	});
 	document.getElementById("invited").addEventListener('tap',function(){ 
     	mui.openWindow({
@@ -326,39 +284,6 @@
     		url:'login.html'
     	})
     });
-    
-    
-    
-//  document.getElementById("itemfirst").addEventListener('tap',function(){
-//  	mui.openWindow({
-//  		id:'invite-item.html',
-//  		url:'invite-item.html'
-//  	})
-//  });
-//  document.getElementById("time").addEventListener('tap',function(){
-//  	mui.openWindow({
-//  		id:'date-time.html',
-//  		url:'date-time.html'
-//  	})
-//  });
-//  document.getElementById("address").addEventListener('tap',function(){
-//  	mui.openWindow({
-//  		id:'address.html',
-//  		url:'address.html'
-//  	})
-//  });
-//  document.getElementById("request").addEventListener('tap',function(){
-//  	mui.openWindow({
-//  		id:'request.html',
-//  		url:'request.html'
-//  	})
-//  });
-//  document.getElementById("showUserPicker").addEventListener('tap',function(){
-//  	mui.openWindow({
-//  		id:'redpocket.html',
-//  		url:'redpocket.html'
-//  	})
-//  });
     </script>
 </body>
 </html>

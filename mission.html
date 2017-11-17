@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 <body>
     <style type="text/css">
@@ -23,83 +24,23 @@
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
         <h1 class="mui-title">发布任务</h1>
     </header>
-    <div class="mui-content">
+    <div class="mui-content" id="content">
     	<ul class="mui-table-view">
     			<li class="mui-table-view-cell item">
     	            <span class="today">今日经验值</span>
-    	            <!--<p class="mui-progressbar mui-progressbar-success" data-progress="20"><span>1</span></p>-->
-    	            <!--<div class="mui-progressbar" id="progress">
-    	            	<span>36</span>
-    	            </div>-->
     	            <span class="progress"></span>
     	            <span class="value">19</span>
     	        </li>
-    	        <li class="mui-table-view-cell item">
+    	        <li class="mui-table-view-cell item" v-for="item in list">
     	            <a class="mui-navigate-right">
     	            	<div class="mui-row">
     	            	    <div class="mui-col-xs-3">
-    	            	    	<img class="pic" src="images/food.png" alt="" />
+    	            	    	<img class="pic" :src="item.img" alt="" />
     	            	    </div>
     	            	    <div class="mui-col-xs-9">
-    	            	    	<p class="content">吃饭</p>
-    	            	    	<span >经验值+5</span>
-    	            	    	<span class="money">约玩币+9</span>
-    	            	    </div>
-    	            	</div>
-    	            </a>
-    	        </li>
-    	        <li class="mui-table-view-cell item">
-    	            <a class="mui-navigate-right">
-    	            	<div class="mui-row">
-    	            	    <div class="mui-col-xs-3">
-    	            	    	<img class="pic" src="images/movie.png" alt="" />
-    	            	    </div>
-    	            	    <div class="mui-col-xs-9">
-    	            	    	<p class="content">看电影</p>
-    	            	    	<span >经验值+3</span>
-    	            	    	<span class="money">约玩币+7</span>
-    	            	    </div>
-    	            	</div>
-    	            </a>
-    	        </li>
-    	        <li class="mui-table-view-cell item">
-    	            <a class="mui-navigate-right">
-    	            	<div class="mui-row">
-    	            	    <div class="mui-col-xs-3">
-    	            	    	<img class="pic" src="images/drink.png" alt="" />
-    	            	    </div>
-    	            	    <div class="mui-col-xs-9">
-    	            	    	<p class="content">喝酒</p>
-    	            	    	<span >经验值+6</span>
-    	            	    	<span class="money">约玩币+2</span>
-    	            	    </div>
-    	            	</div>
-    	            </a>
-    	        </li>
-    	        <li class="mui-table-view-cell item">
-    	            <a class="mui-navigate-right">
-    	            	<div class="mui-row">
-    	            	    <div class="mui-col-xs-3">
-    	            	    	<img class="pic" src="images/voice.png" alt="" />
-    	            	    </div>
-    	            	    <div class="mui-col-xs-9">
-    	            	    	<p class="content">唱歌</p>
-    	            	    	<span >经验值+4</span>
-    	            	    	<span class="money">约玩币+5</span>
-    	            	    </div>
-    	            	</div>
-    	            </a>
-    	        </li>
-    	        <li class="mui-table-view-cell item">
-    	            <a class="mui-navigate-right">
-    	            	<div class="mui-row">
-    	            	    <div class="mui-col-xs-3">
-    	            	    	<img class="pic" src="images/badminton.png" alt="" />
-    	            	    </div>
-    	            	    <div class="mui-col-xs-9">
-    	            	    	<p class="content">打羽毛球</p>
-    	            	    	<span>经验值+1</span>
-    	            	    	<span class="money">约玩币+6</span>
+    	            	    	<p class="content">{{item.text}}</p>
+    	            	    	<span>{{item.experience}}</span>
+    	            	    	<span class="money">{{item.money}}</span>
     	            	    </div>
     	            	</div>
     	            </a>
@@ -109,6 +50,25 @@
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     mui.init();
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+			var self = this;
+			mui.ajax({
+				url: "mission.json",
+				dataType: "json",
+	            success: function(data){
+	                self.list = data;
+	            },
+	            error: function(data){
+	                console.log("读取json数据失败");
+	            }
+	        });
+		}
+    })
 //  mui(container).progressbar({progress:20}).show();
 //  mui('#progress').progressbar({progress:20}).show();
     </script>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 <body>
     <style type="text/css">
@@ -28,7 +29,7 @@
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
         <h1 class="mui-title">消息区</h1>
     </header>
-    <div class="mui-content">
+    <div class="mui-content" id="content">
     	<ul class="mui-table-view view">
     		<img class="pic" src="images/dog-1.jpg" alt="" />
     		<span class="name">小小</span>
@@ -37,43 +38,40 @@
     	                   好想一起吃个饭儿，可惜没人陪~~~
     	    </li>
     	</ul>
-    	<ul class="mui-table-view">
-    		<img class="pics" src="images/dog-2.jpg" alt="" />
-    		<span class="names">桥西123</span>
-    		<span class="dates">2017-11-02</span>
+    	<ul class="mui-table-view views" v-for="item in list">
+    		<img class="pics" :src="item.img" alt="" />
+    		<span class="names">{{item.name}}</span>
+    		<span class="dates">{{item.date}}</span>
     	    <li class="mui-table-view-cell cell">
-    	                     不用加料酒去腥味嘛
+    	                     {{item.text}}
     	        <hr>
-    	        <p class="return">朋友回复：</p>
-    	        <p class="backword">这个可以有···</p>
-    	    </li>
-    	</ul>
-    	<ul class="mui-table-view views">
-    		<img class="pics" src="images/dog-3.jpg" alt="" />
-    		<span class="names">吃了半个西瓜</span>
-    		<span class="dates">2017-11-02</span>
-    	    <li class="mui-table-view-cell cell">
-    	                    有没有唱歌的走起！
-    	        <hr>
-    	        <p class="return">朋友回复：</p>
-    	        <p class="backword">云南印象走起如何啊</p>
-    	    </li>
-    	</ul>
-    	<ul class="mui-table-view views">
-    		<img class="pics" src="images/dog-4.jpg" alt="" />
-    		<span class="names">吃了半个西瓜</span>
-    		<span class="dates">2017-11-02</span>
-    	    <li class="mui-table-view-cell cell">
-    	                    无聊的周末没人陪，可有伴侣相陪！！！
-    	        <hr>
-    	        <p class="return">朋友回复：</p>
-    	        <p class="backword">丽江玩儿起，可否</p>
+    	        <p class="return">{{item.return}}</p>
+    	        <p class="backword">{{item.back}}</p>
     	    </li>
     	</ul>
     </div>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    mui.init()
+    mui.init();
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+    		var self = this;
+    		mui.ajax({
+    			url:"message.json",
+    			dataType:"json",
+    			success:function(data){
+    				self.list = data;
+    			},
+    			error:function(){
+    				console.log("获取json数据失败！")
+    			}
+    		})
+    	}
+    })
     </script>
 </body>
 </html>

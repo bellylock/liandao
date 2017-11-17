@@ -1,0 +1,34 @@
+[
+	{
+		"img":"images/food.png",
+		"title":"吃美食",
+		"vice":"唯有美食与你不可辜负",
+		"pic":"images/voice.png",
+		"activity":"K歌",
+		"do":"无音乐不朋友"
+	},
+	{
+		"img":"images/drink.png",
+		"title":"喝一杯",
+		"vice":"我有酒，你有故事吗",
+		"pic":"images/movie.png",
+		"activity":"看电影",
+		"do":"一起安静的看电影"
+	},
+	{
+		"img":"images/play.png",
+		"title":"打游戏",
+		"vice":"见面玩，更欢畅",
+		"pic":"images/badminton.png",
+		"activity":"羽毛球",
+		"do":"以球会友"
+	},
+	{
+		"img":"images/food.png",
+		"title":"吃美食",
+		"vice":"唯有美食与你不可辜负",
+		"pic":"images/drink.png",
+		"activity":"喝一杯",
+		"do":"我有酒，你有故事吗"
+	}
+]

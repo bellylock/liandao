@@ -14,7 +14,7 @@
 	"icons": {
 		"72": "icon.png"
 	},
-	"launch_path": "main.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"launch_path": "message.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
 	"developer": {
 		"name": "",/*开发者名称*/
 		"email": "",/*开发者邮箱地址*/
@@ -177,333 +177,536 @@
 		}
 	},
 	"dependencies": {
-		"pages": {
-			"setting.html": {
-				"href": "setting.html",
-				"resources": [
-					"js/mui.min.js",
-					"js/mui.view.js",
-					"libs/easymob-webim-sdk/jquery-1.11.1.js",
-					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
-					"libs/easymob-webim-sdk/json2.js",
-					"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
-					"js/feedback.js",
-					"js/feedback-page.js",
-					"js/mui.locker.js",
-					"js/app.js",
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"css/feedback-page.css",
-					"images/iconfont-tianjia.png"
-				],
-				"refer": [
-					"login.html"
-				],
-				"priority": 1
-			},
-			"main.html": {
-				"href": "main.html",
-				"resources": [
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"js/mui.min.js",
-					"js/app.js",
-					"css/iconfont.css",
-					"images/banner.png",
-					"images/file.png",
-					"images/people-1.png",
-					"images/sep-1.png",
-					"images/circle.png",
-					"images/per.png",
-					"images/compass.png",
-					"images/msg-1.png",
-					"images/per-1.png",
-					"images/advice.png",
-					"images/acquire.png",
-					"images/arrange.png",
-					"images/help.png",
-					"images/message.png",
-					"images/exit.png",
-					"images/set.png",
-					"images/invite.png",
-					"images/account.png"
-				],
-				"refer": [
-					"setting.html",
-					"login.html",
-					"discover.html",
-					"express.html",
-					"edit.html",
-					"acceptdate.html",
-					"nearby.html",
-					"mission.html",
-					"message.html",
-					"account.html",
-					"identify.html",
-					"advice.html",
-					"friends.html",
-					"set.html",
-					"problem.html"
-				],
-				"priority": 1
-			},
-			"unlock.html": {
-				"href": "unlock.html",
-				"resources": [
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"js/mui.min.js",
-					"js/mui.locker.js",
-					"js/app.js"
-				],
-				"refer": [
-					"login.html",
-					"main.html"
-				],
-				"priority": 0
-			},
-			"forget_password.html": {
-				"href": "forget_password.html",
-				"resources": [
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"css/style.css",
-					"js/mui.min.js",
-					"js/app.js"
-				],
-				"priority": 1
-			},
-			"reg.html": {
-				"href": "reg.html",
-				"resources": [
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"css/style.css",
-					"js/mui.min.js",
-					"js/app.js"
-				],
-				"refer": [
-					"login.html"
-				],
-				"priority": 3
-			},
-			"login.html": {
-				"href": "login.html",
-				"resources": [
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"css/style.css",
-					"js/mui.min.js",
-					"js/mui.enterfocus.js",
-					"js/app.js",
-					"images/qihoo.png",
-					"images/qq.png",
-					"images/sinaweibo.png",
-					"images/weixin.png",
-					"css/iconfont.css",
-					"images/logo.png",
-					"css/iconfont.ttf",
-					"images/wechat.png"
-				],
-				"refer": [
-					"unlock.html",
-					"forget_password.html",
-					"main.html",
-					"reg.html",
-					"login-item.html"
-				],
-				"priority": 0
-			},
-			"discover.html": {
-				"resources": [
-					"js/mui.min.js",
-					"images/per.png",
-					"css/mui.min.css",
-					"images/banner.png",
-					"images/search.png",
-					"fonts/mui.ttf",
-					"images/cro.png",
-					"images/honest.png",
-					"images/business.png",
-					"images/per-1.png",
-					"images/advice.png",
-					"images/acquire.png",
-					"images/arrange.png",
-					"images/help.png",
-					"images/message.png",
-					"images/exit.png",
-					"images/set.png",
-					"images/invite.png",
-					"images/account.png"
-				],
-				"refer": [
-					"edit.html",
-					"acceptdate.html",
-					"main.html",
-					"login.html",
-					"problem.html",
-					"set.html"
-				],
-				"priority": 0
-			},
-			"express.html": {
-				"resources": [
-					"js/mui.min.js",
-					"images/per.png",
-					"css/mui.min.css",
-					"images/banner.png",
-					"fonts/mui.ttf",
-					"images/pro.png",
-					"images/time.png",
-					"images/redbag.png",
-					"images/position.png",
-					"images/ask.png",
-					"images/file.png",
-					"images/per-1.png",
-					"images/advice.png",
-					"images/acquire.png",
-					"images/arrange.png",
-					"images/help.png",
-					"images/message.png",
-					"images/exit.png",
-					"images/set.png",
-					"images/invite.png",
-					"images/account.png"
-				],
-				"refer": [
-					"examples/card.html",
-					"acceptdate.html",
-					"edit.html",
-					"main.html",
-					"login.html",
-					"examples/input.html",
-					"examples/feedback.html",
-					"card.html",
-					"date-time.html",
-					"invite-item.html",
-					"request.html",
-					"redpocket.html",
-					"address.html",
-					"set.html"
-				],
-				"priority": 0
-			},
-			"examples/card.html": {
-				"resources": [
-					"images/logo.png",
-					"images/cbd.jpg",
-					"images/yuantiao.jpg",
-					"js/mui.min.js",
-					"fonts/mui.ttf",
-					"css/mui.min.css",
-					"css/app.css"
-				],
-				"refer": [],
-				"priority": 0
-			},
-			"major.html": {
-				"resources": [
-					"js/mui.min.js",
-					"fonts/mui.ttf",
-					"css/mui.min.css"
-				],
-				"refer": [],
-				"priority": 0
-			},
-			"acceptdate.html": {
-				"resources": [
-					"js/mui.min.js",
-					"css/app.css",
-					"css/iconfont.css",
-					"css/mui.min.css",
-					"images/return.png",
-					"images/female.png",
-					"images/male.png",
-					"images/time.png",
-					"images/distance.png",
-					"images/position.png",
-					"images/pro.png",
-					"images/fe.png",
-					"images/acquire.png",
-					"images/fee.png",
-					"images/de.png",
-					"images/man-1.png"
-				],
-				"refer": [],
-				"priority": 0
-			},
-			"edit.html": {
-				"resources": [
-					"images/per-1.png",
-					"js/mui.min.js",
-					"css/app.css",
-					"css/mui.min.css",
-					"images/return.png",
-					"images/head.png",
-					"fonts/mui.ttf",
-					"images/man-1.png",
-					"images/localtion.png",
-					"images/acquire.png",
-					"images/skill.png"
-				],
-				"refer": [
-					"edit-file.html"
-				],
-				"priority": 0
-			},
-			"edit-file.html": {
-				"resources": [
-					"js/mui.min.js",
-					"css/app.css",
-					"css/mui.min.css",
-					"images/return.png",
-					"fonts/mui.ttf",
-					"images/per-1.png",
-					"images/acquire.png",
-					"images/skill.png"
-				],
-				"refer": [
-					"edit.html"
-				],
-				"priority": 0
-			},
-			"date-time.html": {
-				"resources": [],
-				"refer": [
-					"express.html"
-				],
-				"priority": 0
-			},
-			"request.html": {
-				"resources": [],
-				"refer": [
-					"express.html"
-				],
-				"priority": 0
-			},
-			"address.html": {
-				"resources": [],
-				"refer": [
-					"address-detail.html"
-				],
-				"priority": 0
-			},
-			"login-item.html": {
-				"resources": [],
-				"refer": [
-					"main.html"
-				],
-				"priority": 0
-			}
-		},
-		"idle": {
-			"resources": [
-				"js/service.js",
-				"libs/easymob-webim-sdk/quickstart.md",
-				"images/user-photo.png",
-				"README.md"
-			]
-		}
+	  "pages": {
+	    "setting.html": {
+	      "href": "setting.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "js/mui.view.js",
+	        "libs/easymob-webim-sdk/jquery-1.11.1.js",
+	        "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+	        "libs/easymob-webim-sdk/json2.js",
+	        "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+	        "js/feedback.js",
+	        "js/feedback-page.js",
+	        "js/mui.locker.js",
+	        "js/app.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "css/feedback-page.css",
+	        "images/iconfont-tianjia.png"
+	      ],
+	      "refer": [
+	        "login.html"
+	      ],
+	      "priority": 1
+	    },
+	    "main.html": {
+	      "href": "main.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "js/mui.min.js",
+	        "js/app.js",
+	        "css/iconfont.css",
+	        "images/banner.png",
+	        "images/file.png",
+	        "images/people-1.png",
+	        "images/sep-1.png",
+	        "images/circle.png",
+	        "images/per.png",
+	        "images/compass.png",
+	        "images/msg-1.png",
+	        "images/per-1.png",
+	        "images/advice.png",
+	        "images/acquire.png",
+	        "images/arrange.png",
+	        "images/help.png",
+	        "images/message.png",
+	        "images/exit.png",
+	        "images/set.png",
+	        "images/invite.png",
+	        "images/account.png"
+	      ],
+	      "refer": [
+	        "setting.html",
+	        "login.html",
+	        "discover.html",
+	        "express.html",
+	        "edit.html",
+	        "acceptdate.html",
+	        "nearby.html",
+	        "mission.html",
+	        "message.html",
+	        "account.html",
+	        "identify.html",
+	        "advice.html",
+	        "friends.html",
+	        "set.html",
+	        "problem.html"
+	      ],
+	      "priority": 1
+	    },
+	    "unlock.html": {
+	      "href": "unlock.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "js/mui.min.js",
+	        "js/mui.locker.js",
+	        "js/app.js"
+	      ],
+	      "refer": [
+	        "login.html",
+	        "main.html"
+	      ],
+	      "priority": 0
+	    },
+	    "forget_password.html": {
+	      "href": "forget_password.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "css/style.css",
+	        "js/mui.min.js",
+	        "js/app.js"
+	      ],
+	      "priority": 1
+	    },
+	    "reg.html": {
+	      "href": "reg.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "css/style.css",
+	        "js/mui.min.js",
+	        "js/app.js"
+	      ],
+	      "refer": [
+	        "login.html"
+	      ],
+	      "priority": 3
+	    },
+	    "login.html": {
+	      "href": "login.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "css/style.css",
+	        "js/mui.min.js",
+	        "js/mui.enterfocus.js",
+	        "js/app.js",
+	        "images/qihoo.png",
+	        "images/qq.png",
+	        "images/sinaweibo.png",
+	        "images/weixin.png",
+	        "css/iconfont.css",
+	        "images/logo.png",
+	        "css/iconfont.ttf",
+	        "images/wechat.png"
+	      ],
+	      "refer": [
+	        "unlock.html",
+	        "forget_password.html",
+	        "main.html",
+	        "reg.html",
+	        "login-item.html"
+	      ],
+	      "priority": 0
+	    },
+	    "discover.html": {
+	      "resources": [
+	        "js/mui.min.js",
+	        "images/per.png",
+	        "css/mui.min.css",
+	        "images/banner.png",
+	        "images/search.png",
+	        "fonts/mui.ttf",
+	        "images/cro.png",
+	        "images/honest.png",
+	        "images/business.png",
+	        "images/per-1.png",
+	        "images/advice.png",
+	        "images/acquire.png",
+	        "images/arrange.png",
+	        "images/help.png",
+	        "images/message.png",
+	        "images/exit.png",
+	        "images/set.png",
+	        "images/invite.png",
+	        "images/account.png"
+	      ],
+	      "refer": [
+	        "edit.html",
+	        "acceptdate.html",
+	        "main.html",
+	        "login.html",
+	        "problem.html",
+	        "set.html"
+	      ],
+	      "priority": 0
+	    },
+	    "express.html": {
+	      "resources": [
+	        "js/mui.min.js",
+	        "images/per.png",
+	        "css/mui.min.css",
+	        "images/banner.png",
+	        "fonts/mui.ttf",
+	        "images/pro.png",
+	        "images/time.png",
+	        "images/redbag.png",
+	        "images/position.png",
+	        "images/ask.png",
+	        "images/file.png",
+	        "images/per-1.png",
+	        "images/advice.png",
+	        "images/acquire.png",
+	        "images/arrange.png",
+	        "images/help.png",
+	        "images/message.png",
+	        "images/exit.png",
+	        "images/set.png",
+	        "images/invite.png",
+	        "images/account.png"
+	      ],
+	      "refer": [
+	        "examples/card.html",
+	        "acceptdate.html",
+	        "edit.html",
+	        "main.html",
+	        "login.html",
+	        "examples/input.html",
+	        "examples/feedback.html",
+	        "card.html",
+	        "date-time.html",
+	        "invite-item.html",
+	        "request.html",
+	        "redpocket.html",
+	        "address.html",
+	        "set.html"
+	      ],
+	      "priority": 0
+	    },
+	    "examples/card.html": {
+	      "resources": [
+	        "images/logo.png",
+	        "images/cbd.jpg",
+	        "images/yuantiao.jpg",
+	        "js/mui.min.js",
+	        "fonts/mui.ttf",
+	        "css/mui.min.css",
+	        "css/app.css"
+	      ],
+	      "refer": [],
+	      "priority": 0
+	    },
+	    "major.html": {
+	      "resources": [
+	        "js/mui.min.js",
+	        "fonts/mui.ttf",
+	        "css/mui.min.css"
+	      ],
+	      "refer": [],
+	      "priority": 0
+	    },
+	    "acceptdate.html": {
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/app.css",
+	        "css/iconfont.css",
+	        "css/mui.min.css",
+	        "images/return.png",
+	        "images/female.png",
+	        "images/male.png",
+	        "images/time.png",
+	        "images/distance.png",
+	        "images/position.png",
+	        "images/pro.png",
+	        "images/fe.png",
+	        "images/acquire.png",
+	        "images/fee.png",
+	        "images/de.png",
+	        "images/man-1.png",
+	        "fonts/mui.ttf",
+	        "css/iconfont.eot",
+	        "css/iconfont.ttf",
+	        "js/vue.min.js",
+	        "accept.json"
+	      ],
+	      "refer": [],
+	      "priority": 0
+	    },
+	    "edit.html": {
+	      "resources": [
+	        "images/per-1.png",
+	        "js/mui.min.js",
+	        "css/app.css",
+	        "css/mui.min.css",
+	        "images/return.png",
+	        "images/head.png",
+	        "fonts/mui.ttf",
+	        "images/man-1.png",
+	        "images/localtion.png",
+	        "images/acquire.png",
+	        "images/skill.png"
+	      ],
+	      "refer": [
+	        "edit-file.html"
+	      ],
+	      "priority": 0
+	    },
+	    "edit-file.html": {
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/app.css",
+	        "css/mui.min.css",
+	        "images/return.png",
+	        "fonts/mui.ttf",
+	        "images/per-1.png",
+	        "images/acquire.png",
+	        "images/skill.png"
+	      ],
+	      "refer": [
+	        "edit.html"
+	      ],
+	      "priority": 0
+	    },
+	    "date-time.html": {
+	      "resources": [],
+	      "refer": [
+	        "express.html"
+	      ],
+	      "priority": 0
+	    },
+	    "request.html": {
+	      "resources": [],
+	      "refer": [
+	        "express.html"
+	      ],
+	      "priority": 0
+	    },
+	    "address.html": {
+	      "resources": [],
+	      "refer": [
+	        "address-detail.html"
+	      ],
+	      "priority": 0
+	    },
+	    "login-item.html": {
+	      "resources": [],
+	      "refer": [
+	        "main.html"
+	      ],
+	      "priority": 0
+	    }
+	  },
+	  "idle": {
+	    "resources": [
+	      "images/l-2（0）.png",
+	      "js/mui.dtpicker.js",
+	      "examples/icons.html",
+	      "examples/message-bottom.html",
+	      "js/mui.previewimage.js",
+	      "images/sep.png",
+	      "images/food-1.png",
+	      "css/mui.imageviewer.css",
+	      "images/receive.png",
+	      "images/mission.png",
+	      "images/dog-4.jpg",
+	      "README.md",
+	      "examples/setting.html",
+	      "css/mui.listpicker.css",
+	      "js/mui.lazyload.js",
+	      "examples/buttons-with-block.html",
+	      "images/wine.png",
+	      "images/ad-3.jpg",
+	      "examples/tabbar.html",
+	      "js/95516.js",
+	      "images/award.png",
+	      "images/tree.png",
+	      "examples/login.html",
+	      "js/update.js",
+	      "examples/pullrefresh_with_tab.html",
+	      "examples/tab-vertical-scroll.html",
+	      "examples/nav_transparent_native.html",
+	      "images/muscle.png",
+	      "examples/best-practices/list-to-detail/vue.min.js",
+	      "js/ad.js",
+	      "examples/media-list.html",
+	      "images/list-1.jpg",
+	      "examples/grid-default.html",
+	      "examples/grid-pagination.html",
+	      "examples/pagination.html",
+	      "js/mui.indexedlist.js",
+	      "examples/tab-with-viewpagerindicator.html",
+	      "css/mui.indexedlist.css",
+	      "examples/checkbox.html",
+	      "images/people.png",
+	      "examples/buttons-with-loading.html",
+	      "examples/best-practices/list-to-detail/detail.html",
+	      "images/search-2.png",
+	      "images/party.png",
+	      "examples/tableviews-with-swipe.html",
+	      "images/peo.png",
+	      "examples/buttons-with-icons.html",
+	      "images/text.png",
+	      "js/mui.picker.min.js",
+	      "images/mission-1.png",
+	      "examples/nav-nativeObj.html",
+	      "examples/typography.html",
+	      "js/mui.zoom.js",
+	      "images/list-2.jpg",
+	      "examples/tableviews-with-collapses.html",
+	      "css/iconfont.woff",
+	      "examples/tab-with-segmented-control.html",
+	      "images/ad-2.jpg",
+	      "images/view.png",
+	      "examples/pullrefresh.html",
+	      "js/mui.pullToRefresh.material.js",
+	      "images/l-2.png",
+	      "examples/tab-webview-subpage-about.html",
+	      "images/phone.png",
+	      "examples/slider-table-pagination.html",
+	      "examples/buttons.html",
+	      "examples/indexed-list.html",
+	      "images/user-photo.png",
+	      "examples/tab-top-subpage-2.html",
+	      "images/img-2.jpg",
+	      "examples/guide.html",
+	      "examples/tabbar-labels-only.html",
+	      "images/game.png",
+	      "examples/best-practices/list-to-detail/list-to-detail.css",
+	      "images/movie-1.png",
+	      "examples/badges.html",
+	      "examples/slider-with-title.html",
+	      "images/qq-g.png",
+	      "js/mui.listpicker.js",
+	      "examples/tabbar-with-submenus.html",
+	      "images/triangle.png",
+	      "css/mui.poppicker.css",
+	      "images/login-1.png",
+	      "examples/beecloud.html",
+	      "examples/info.html",
+	      "main-1.html",
+	      "examples/ad.html",
+	      "images/microphone.png",
+	      "js/mui.picker.all.js",
+	      "images/qq-1.png",
+	      "examples/locker-dom.html",
+	      "images/ad-5.jpg",
+	      "examples/pullrefresh_main.html",
+	      "examples/progressbar.html",
+	      "examples/popovers.html",
+	      "examples/best-practices/list-to-detail/listview.html",
+	      "images/voice.png",
+	      "examples/offcanvas-drag-left-plus-menu.html",
+	      "images/money_little.jpg",
+	      "examples/numbox.html",
+	      "images/phone-w.png",
+	      "images/img-3.jpg",
+	      "examples/im-chat.html",
+	      "js/mui.poppicker.js",
+	      "examples/slider-table-default.html",
+	      "js/mui.js",
+	      "js/city.data.js",
+	      "images/ad-1.jpg",
+	      "js/beecloud.js",
+	      "examples/actionsheet-plus.html",
+	      "examples/pullrefresh_sub.html",
+	      "images/name.png",
+	      "examples/tab-with-segmented-control-vertical.html",
+	      "examples/accordion.html",
+	      "examples/list-triplex-row.html",
+	      "examples/tab-top-subpage-4.html",
+	      "images/wechat-g.png",
+	      "js/city.data-3.js",
+	      "images/play.png",
+	      "images/ad-4.jpg",
+	      "css/mui.dtpicker.css",
+	      "css/mui.picker.all.css",
+	      "images/movie.png",
+	      "images/write.png",
+	      "images/iconfont-shanzi.png",
+	      "js/mui.imageViewer.js",
+	      "images/man.png",
+	      "images/money_multiple.jpg",
+	      "images/img-1.jpg",
+	      "js/webviewGroup.js",
+	      "examples/radio.html",
+	      "js/mui.pullToRefresh.js",
+	      "examples/picker.html",
+	      "images/lable-block.png",
+	      "examples/tab-webview-subpage-chat.html",
+	      "examples/tab-webview-main.html",
+	      "examples/tab-top-subpage-5.html",
+	      "examples/clouddb_wilddog.html",
+	      "examples/list-with-input.html",
+	      "images/dollar.png",
+	      "examples/ajax.html",
+	      "images/starO.png",
+	      "images/login-2.png",
+	      "examples/modals.html",
+	      "examples/nav.html",
+	      "images/date.png",
+	      "images/compass-1.png",
+	      "images/food.png",
+	      "images/l-1.png",
+	      "css/feedback.css",
+	      "examples/imageviewer.html",
+	      "images/header.png",
+	      "examples/offcanvas-drag-left-plus-main.html",
+	      "examples/buttons-with-badges.html",
+	      "examples/nav_transparent.html",
+	      "examples/offcanvas-drag-right.html",
+	      "images/friend.jpg",
+	      "images/drink.png",
+	      "examples/echarts.html",
+	      "examples/tab-top-webview-main.html",
+	      "examples/tab-top-subpage-3.html",
+	      "css/mui.picker.min.css",
+	      "images/dog-2.jpg",
+	      "examples/indexed-list-select.html",
+	      "js/mui.picker.js",
+	      "dtpicker.html",
+	      "examples/tab-webview-subpage-setting.html",
+	      "examples/lazyload-image.html",
+	      "examples/dtpicker.html",
+	      "images/list-3.jpg",
+	      "images/dog-3.jpg",
+	      "examples/date.html",
+	      "images/search-1.png",
+	      "examples/tab-top-subpage-1.html",
+	      "js/arttmpl.js",
+	      "examples/offcanvas-drag-down.html",
+	      "examples/tableviews.html",
+	      "examples/slider-default.html",
+	      "css/icons-extra.css",
+	      "images/external.png",
+	      "js/mui.lazyload.img.js",
+	      "examples/tableviews-with-badges.html",
+	      "examples/range.html",
+	      "images/dog-1.jpg",
+	      "examples/tab-webview-subpage-contact.html",
+	      "examples/offcanvas-drag-right-plus-main.html",
+	      "images/background.png",
+	      "examples/actionsheet.html",
+	      "examples/offcanvas-drag-right-plus-menu.html",
+	      "examples/dialog.html",
+	      "examples/offcanvas-drag-left.html",
+	      "libs/easymob-webim-sdk/quickstart.md",
+	      "examples/icons-extra.html",
+	      "css/mui.picker.css",
+	      "images/star.jpg",
+	      "examples/slider-native.html",
+	      "images/asd.png",
+	      "images/msg.png",
+	      "picker.html",
+	      "images/badminton.png",
+	      "images/coffee.png",
+	      "examples/switches.html"
+	    ]
+	  }
 	},
 	"unpackage":[
 	  "README.md"

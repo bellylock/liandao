@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 <body>
     <style type="text/css">
@@ -19,24 +20,24 @@
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
         <h1 class="mui-title">好友广场</h1>
     </header>
-    <div class="mui-content">
+    <div class="mui-content" id="content">
     	<img class="title" src="images/friend.jpg" alt="" />
     	<ul class="mui-table-view">
-    	    <li class="mui-table-view-cell">
+    	    <li class="mui-table-view-cell" v-for="item in list">
     	        <div class="mui-row">
     	            <div class="mui-col-xs-2">
-    	                <img class="pic" src="images/ad-1.jpg" alt="" />
+    	                <img class="pic" :src="item.img" alt="" />
     	            </div>
-    	            <div class="mui-col-xs-7 c7">
-    	                <h4>极乐空间</h4>
-    	                <span class="ps">白领</span>
+    	            <div class="mui-col-xs-7 c7"> 
+    	                <h4>{{item.title}}</h4>
+    	                <span class="ps">{{item.vice}}</span>
     	            </div>
     	            <div class="mui-col-xs-3 c3">
-    	                <span class="time">1小时前</span>
+    	                <span class="time">{{item.time}}</span>
     	            </div>
     	        </div>
     	    </li>
-    	    <li class="mui-table-view-cell">
+    	    <!--<li class="mui-table-view-cell">
     	        <div class="mui-row">
     	            <div class="mui-col-xs-2">
     	                <img class="pic" src="images/ad-2.jpg" alt="" />
@@ -119,12 +120,31 @@
     	                <span class="time">0.9小时前</span>
     	            </div>
     	        </div>
-    	    </li>
+    	    </li>-->
     	</ul>
     </div>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    mui.init()
+    mui.init();
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+			var self = this;
+			mui.ajax({
+				url: "friends.json",
+				dataType: "json",
+	            success: function(data){
+	                self.list = data;
+	            },
+	            error: function(data){
+	                console.log("读取json数据失败");
+	            }
+	        });
+		}
+    })
     </script>
 </body>
 </html>

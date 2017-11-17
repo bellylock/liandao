@@ -1,0 +1,32 @@
+[
+	{
+		"img":"images/food.png",
+		"text":"吃饭",
+		"experience":"经验值+5",
+		"money":"约玩币+9"
+	},
+	{
+		"img":"images/movie.png",
+		"text":"看电影",
+		"experience":"经验值+3",
+		"money":"约玩币+7"
+	},
+	{
+		"img":"images/drink.png",
+		"text":"喝酒",
+		"experience":"经验值+6",
+		"money":"约玩币+2"
+	},
+	{
+		"img":"images/voice.png",
+		"text":"唱歌",
+		"experience":"经验值+4",
+		"money":"约玩币+5"
+	},
+	{
+		"img":"images/badminton.png",
+		"text":"打羽毛球",
+		"experience":"经验值+1",
+		"money":"约玩币+6"
+	}
+]

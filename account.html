@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
+    <script src="js/vue.min.js"></script> 
 </head>
 <body>
     <style type="text/css">
@@ -33,7 +34,7 @@
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
         <h1 class="mui-title">我的账户</h1>
     </header>
-    <div class="mui-content">
+    <div class="mui-content" id="content">
     	<ul class="mui-table-view">
     	    <li class="mui-table-view-cell">
     	        <div class="mui-row">
@@ -65,53 +66,19 @@
     	    	<span class="score">积分兑换</span>
     	    </div>
     	</div>
-    	<ul class="mui-table-view detail">
-    	    <li class="mui-table-view-cell">
+    	<ul class="mui-table-view detail" v-for="item in list">
+    	    <li class="mui-table-view-cell" >
     	        <div class="mui-row">
     	            <div class="mui-col-xs-2">
-    	                <img class="draw" src="images/list-1.jpg" alt="" />
+    	                <img class="draw" :src="item.title" alt="" />
     	            </div>
     	            <div class="mui-col-xs-7 c8">
-    	                <p>上海佘山营销进化论</p>
-    	                <img src="images/money_little.jpg" alt="" />
-    	                <span>X 100</span>
+    	                <p>{{item.text}}</p>
+    	                <img :src="item.price" alt="" />
+    	                <span>{{item.num}}</span>
     	            </div>
     	            <div class="mui-col-xs-3">
-    	                <button type="button" class="btn">兑换</button>
-    	            </div>
-    	        </div>
-    	    </li>
-    	</ul>
-    	<ul class="mui-table-view detail">
-    	    <li class="mui-table-view-cell">
-    	        <div class="mui-row">
-    	            <div class="mui-col-xs-2">
-    	                <img class="draw" src="images/list-2.jpg" alt="" />
-    	            </div>
-    	            <div class="mui-col-xs-7 c8">
-    	                <p>云南保山365业绩工程</p>
-    	                <img src="images/money_little.jpg" alt="" />
-    	                <span>X 300</span>
-    	            </div>
-    	            <div class="mui-col-xs-3">
-    	                <button type="button" class="btn">兑换</button>
-    	            </div>
-    	        </div>
-    	    </li>
-    	</ul>
-    	<ul class="mui-table-view detail">
-    	    <li class="mui-table-view-cell">
-    	        <div class="mui-row">
-    	            <div class="mui-col-xs-2">
-    	                <img class="draw" src="images/list-3.jpg" alt="" />
-    	            </div>
-    	            <div class="mui-col-xs-7 c8">
-    	                <p>武汉市临水镇达晚霞</p>
-    	                <img src="images/money_little.jpg" alt="" />
-    	                <span>X 200</span>
-    	            </div>
-    	            <div class="mui-col-xs-3">
-    	                <button type="button" class="btn">兑换</button>
+    	                <button type="button" class="btn">{{item.change}}</button>
     	            </div>
     	        </div>
     	    </li>
@@ -119,7 +86,26 @@
     </div>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    mui.init()
+    mui.init();
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+			var self = this;
+			mui.ajax({
+				url: "account.json",
+				dataType: "json",
+	            success: function(data){
+	                self.list = data;
+	            },
+	            error: function(data){
+	                console.log("读取json数据失败");
+	            }
+	        });
+		}
+    })
     </script>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script type="text/javascript" src="js/mui.min.js"></script>
+    <script src="js/vue.min.js"></script>
 </head>
 <body>
     <style type="text/css">
@@ -31,7 +32,7 @@
 	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 	    <h1 class="mui-title">约玩地点</h1>
 	</header>
-    <div class="mui-content">
+    <div class="mui-content" id="content">
     	<div class="mui-row">
     	    <div class="mui-col-xs-2 c2">
     	    	<div class="mui-input-row">
@@ -68,22 +69,22 @@
     	    </div>
     	</div>
     	<ul class="mui-table-view">
-    	    <li class="mui-table-view-cell mui-media address_detail" id="gold">
+    	    <li class="mui-table-view-cell mui-media address_detail" id="gold" v-for="item in list">
     	        <a href="javascript:;">
     	            <div class="box">
-    	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-1.jpg">
+    	            	<img class="pic" class="mui-media-object mui-pull-left" :src="item.pic">
     	            </div>
     	            <div class="mui-media-body detail">
-    	                                        金胞粮格调曹婷
-    	                <p class="mui-ellipsis">评价四星 <span class="average">人均：￥45</span></p>
+    	                {{item.text}}
+    	                <p class="mui-ellipsis">{{item.evaluate}} <span class="average">{{item.average}}</span></p>
     	                <p>
-    	                	<span class="left">西山区，西山区政府</span>
-    	                	<span class="right"><img class="localtion" src="images/localtion.png" alt="" />0.03km</span>
+    	                	<span class="left">{{item.place}}</span>
+    	                	<span class="right"><img class="localtion" :src="item.localtion" alt="" />{{item.distance}}</span>
     	                </p>
     	            </div>
     	        </a>
     	    </li>
-    	    <li class="mui-table-view-cell mui-media address_detail" id="pleasure">
+    	    <!--<li class="mui-table-view-cell mui-media address_detail" id="pleasure">
     	        <a href="javascript:;">
     	            <div class="box">
     	            	<img class="pic" class="mui-media-object mui-pull-left" src="images/ad-2.jpg">
@@ -202,72 +203,85 @@
     	                </p>
     	            </div>
     	        </a>
-    	    </li>
+    	    </li>-->
     	</ul>
     </div>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     mui.init();
-//  mui(".address_detail").on('tap','.mui-table-view-cell',function(){
-//  	mui.openWindow({
-//  		class:'address-detail.html',
-//  		url:'address-detail.html'
-//  	})
-//  })
-	document.getElementById("gold").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-1',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("pleasure").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-2',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("private").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-3',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("chicken").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-4',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("lake").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-5',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("wheat").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-6',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("red").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-7',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("hot").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-8',
-			url:'address-detail.html'
-		})
-	});
-	document.getElementById("south").addEventListener('tap',function(){
-		mui.openWindow({
-			id:'address-9',
-			url:'address-detail.html'
-		})
-	})
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+			var self = this;
+			mui.ajax({
+				url: "address.json",
+				dataType: "json",
+	            success: function(data){
+	                self.list = data;
+	            },
+	            error: function(data){
+	                console.log("读取json数据失败");
+	            }
+	        });
+		}
+    });
+//	document.getElementById("gold").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-1',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("pleasure").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-2',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("private").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-3',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("chicken").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-4',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("lake").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-5',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("wheat").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-6',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("red").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-7',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("hot").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-8',
+//			url:'address-detail.html'
+//		})
+//	});
+//	document.getElementById("south").addEventListener('tap',function(){
+//		mui.openWindow({
+//			id:'address-9',
+//			url:'address-detail.html'
+//		})
+//	})
     </script>
 </body>
 </html>

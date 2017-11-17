@@ -1,0 +1,32 @@
+[
+	{
+		"img":"images/food-1.png",
+		"text":"吃美食",
+		"pic":"images/microphone.png",
+		"title":"K歌"
+	},
+	{
+		"img":"images/movie-1.png",
+		"text":"看电影",
+		"pic":"images/game.png",
+		"title":"游戏"
+	},
+	{
+		"img":"images/wine.png",
+		"text":"喝一杯",
+		"pic":"images/coffee.png",
+		"title":"喝咖啡"
+	},
+	{
+		"img":"images/muscle.png",
+		"text":"健身",
+		"pic":"images/tree.png",
+		"title":"郊游"
+	},
+	{
+		"img":"images/party.png",
+		"text":"party",
+		"pic":"images/write.png",
+		"title":"项目自定义"
+	}
+]
