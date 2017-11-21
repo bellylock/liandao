@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vue.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+    	body{background: white;}
+    	.mui-content{background: white;height: 80%;}
+    	.top{border-bottom: 1px solid #ccc;width: 94%;margin-left: 3%;}
+    	.common{padding: 15% 0 15% 8%;margin-bottom: 0;
+    	background: url("images/arrow-down-b.png") no-repeat;}
+    	.first{padding-right: 15px;background-position: 75% 50%;}
+    	.second{padding-right: 15px;background-position: 75% 50%;}
+    	.third{padding-right: 15px;background-position: 95% 50%;}
+    	.forth{padding-right: 15px;background-position: 100% 50%;}
+    	.c5{float: left;width: 40%;border: 1px solid #ccc;text-align: center;
+    	margin-left: 7%;margin-top: 5%;padding: 5% 0;border-radius: 8px;}
+    	.per{width: 70%;background: #ccc;border-radius: 55px;padding: 10px;}
+    </style>
+    <div class="mui-content" id="content">
+    	<div class="mui-row top">
+    	    <div class="mui-col-xs-3">
+    	    	<select name="" class="first common">
+    	    		<option value="">类型</option>
+    	    		<option value="">推荐</option>
+    	    		<option value="">小清新</option>
+    	    		<option value="">萌妹子</option>
+    	    		<option value="">真蕊值</option>
+    	    	</select>
+    	    </div>
+    	    <div class="mui-col-xs-3">
+    	    	<select name="" class="second common">
+    	    		<option value="">积分</option>
+    	    		<option value="">钻石级</option>
+    	    		<option value="">黄金级</option>
+    	    		<option value="">白银级</option>
+    	    		<option value="">青铜级</option>
+    	    	</select>
+    	    </div>
+    	    <div class="mui-col-xs-3">
+    	    	<select name="" class="third common">
+    	    		<option value="">其他</option>
+    	    		<option value="">积分降序</option>
+    	    		<option value="">综合评分</option>
+    	    		<option value="">心情好坏</option>
+    	    	</select>
+    	    </div>
+    	    <div class="mui-col-xs-3">
+    	    	<select name="" class="forth common">
+    	    		<option value="">我的邀约</option>
+    	    		<option value="">近一天</option>
+    	    		<option value="">近三天</option>
+    	    		<option value="">近一个星期</option>
+    	    	</select>
+    	    </div>
+    	</div>
+    	<div class="mui-row">
+    	    <div class="mui-col-xs-5 c5" v-for="item in list">
+    	    	<img class="per" :src="item.img" alt="" />
+    	    </div>
+    	</div>
+    </div>
+    <script type="text/javascript">
+    var lastId = '';
+    mui.init({
+        pullRefresh: {
+        container: '#content',
+        //下拉刷新
+        down: {
+            style: 'circle',
+            color:'#2BD009',
+            offset: '0px',
+            auto: true,
+            callback: function() {
+                if(window.plus && plus.networkinfo.getCurrentType() === plus.networkinfo.CONNECTION_NONE) {
+                    plus.nativeUI.toast('似乎已断开与互联网的连接', {
+                    	verticalAlign: 'top'
+                	});
+                    return;
+                }
+                var data = {
+                    column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
+                }
+
+                if(lastId) { //说明已有数据，目前处于下拉刷新，增加时间戳，触发服务端立即刷新，返回最新数据
+                    data.lastId = lastId;
+                    data.time = new Date().getTime() + "";
+                }
+                //请求列表信息流
+                mui.getJSON(
+                	"http://spider.dcloud.net.cn/api/news",
+                	data, 
+                	function(rsp) {
+                    mui('#content').pullRefresh().endPulldown();
+                    if(rsp && rsp.length > 0) {
+                        lastId = rsp[0].id; //保存最新消息的id，方便下拉刷新时使用
+					}
+                });
+            }
+        },
+        //上拉加载
+        up: {
+            contentrefresh: '正在加载...',
+            contentnomore: '没有了',
+            callback: function() {
+                var _self = this;
+                if(window.plus && plus.networkinfo.getCurrentType() === plus.networkinfo.CONNECTION_NONE) {
+                    plus.nativeUI.toast('似乎已断开与互联网的连接', {
+                        verticalAlign: 'top'
+                    });
+                    return;
+                }
+    
+                var data = {
+                        column: "id,post_id,title,author_name,cover,published_at" //需要的字段名
+                }
+    
+                if(lastId) { //说明已有数据，目前处于上拉加载，增加时间戳，触发服务端立即刷新，返回最新数据
+                    data.lastId = lastId;
+                    data.time = new Date().getTime() + "";
+                }
+                //请求列表
+                mui.getJSON(
+                    "http://spider.dcloud.net.cn/api/news", 
+                    data, 
+                    function(rsp) {
+                    //mui('#hotseller').pullRefresh().endPulldown();
+                    if(rsp && rsp.length > 0) {
+                        _self.endPullupToRefresh(false);
+                        lastId = rsp[0].id; //保存最新消息的id，方便下拉刷新时使用                 
+                    }else{
+                        _self.endPullupToRefresh(true);
+                        }
+                });
+            }
+            }
+        }
+        });
+    var app = new Vue({
+    	el:"#content",
+    	data:{
+    		list:[]
+    	},
+    	mounted:function(){
+    		var self = this;
+    		mui.ajax({
+    			url:"item-center-items.json",
+    			dataType:"json",
+    			success:function(data){
+    				self.list = data;
+    			},
+    			error:function(){
+    				console.log("获取json数据失败！")
+    			}
+    		})
+    	}
+    })
+    </script>
+</body>
+</html>

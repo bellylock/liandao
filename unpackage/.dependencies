@@ -1,13 +1,7 @@
 {
   "acceptdate.html": {
     "href": "acceptdate.html",
-    "resources": [
-      "fonts/mui.ttf",
-      "css/iconfont.eot",
-      "css/iconfont.ttf",
-      "js/vue.min.js",
-      "accept.json"
-    ],
+    "resources": [],
     "priority": 0
   }
 }

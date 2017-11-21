@@ -249,5 +249,18 @@
       "main.html"
     ],
     "resources": []
+  },
+  "invite-center.html": {
+    "refer": [
+      "item-center-items.html",
+      "edit.html",
+      "nearby.html",
+      "edit-file.html",
+      "card.html"
+    ],
+    "resources": [
+      "edit.html",
+      "item-center-items.html"
+    ]
   }
 }

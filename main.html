@@ -218,12 +218,11 @@
 	    </ul>
 	
 	<nav class="mui-bar mui-bar-tab" id="footernav">
-        <a id="defaultTab" class="mui-tab-item" href="index.html">
+        <a id="defaultTab" class="mui-tab-item">
             <img class="com" src="images/compass.png" alt="" />
             <p class="mui-tab-label">发现</p> 
-            <!--<a href="login.html">发现</a>--> 
         </a>
-        <a class="mui-tab-item" href="nearby.html" id="nearby">
+        <a class="mui-tab-item" id="nearbys">
             <img class="circle" src="images/circle.png" alt="" />
             <p class="mui-tab-label">圈子</p>
         </a>
@@ -251,7 +250,7 @@
 		});
 		document.getElementById("invite").addEventListener('tap',function(){
 			mui.openWindow({
-				id:'express.html',
+				id:'express',
 				url:'express.html'
 			})
 		});
@@ -291,10 +290,10 @@
 				url:'mission.html'
 			})
 		});
-		document.getElementById("nearby").addEventListener('tap',function(){
+		document.getElementById("nearbys").addEventListener('tap',function(){
 			mui.openWindow({
 				id:'nearby',
-				url:'nearby.html'
+				url:'vip.html'
 			})
 		});
 		document.getElementById("message").addEventListener('tap',function(){
