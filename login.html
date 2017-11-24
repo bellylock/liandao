@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
-    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
     <style type="text/css">
@@ -22,8 +21,8 @@
     	.dia{font-size: 14px;display: block;margin-top: -9%;margin-bottom: 3%;margin-left: 8%;}
     	.way{width: 41%;float: left;border: 1px solid #666;margin-left: 6%;border-radius: 5px;
     	padding: 5px 0 5px 20px;margin-top: 5%;}
-    	.qq{width: 19%;}
-    	.wechat{width: 22%;}
+    	.qq{width: 22%;}
+    	.wechat{width: 19%;}
     	.chat{ display: block;margin-top: -20%;margin-left: 27%;color: #64aa14;}
     	.deal{margin-top: 20%;color: #333;font-size: 16px;margin-left: 40%;}
     </style>
@@ -79,18 +78,16 @@
     	  <div class="mui-slider-indicator">
     	    <div class="mui-indicator mui-active"></div>
     	    <div class="mui-indicator"></div>
-    	    <!--<div class="mui-indicator"></div>
-    	    <div class="mui-indicator"></div>-->
     	  </div>
     	</div>
     	<button id="login" type="button" class="phonelogin"><img class="phone" src="images/phone-w.png" alt="" /><span class="dia">手机登录</span></button>
     	<div class="box">
-    		<div class="way">
-    			<img class="wechat" src="images/wechat-g.png" alt="" />
+    		<div class="way" id="qq">
+    			<img class="wechat" src="images/qq-g.png" alt="" />
     			<span class="chat">QQ登录</span>
     		</div>
-    		<div class="way">
-    			<img class="qq" src="images/qq-g.png" alt="" />
+    		<div class="way" id="wechat">
+    			<img class="qq" src="images/wechat-g.png" alt="" />
     			<span class="chat">微信登录</span>
     		</div>
     	</div>
@@ -104,7 +101,19 @@
     });
     document.getElementById("login").addEventListener('tap',function(){
     	mui.openWindow({
-    		url:'login-item.html'
+    		url:'text-login.html'
+    	})
+    });
+    document.getElementById("qq").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:"qq-login.html",
+    		id:"qq"
+    	})
+    });
+    document.getElementById("wechat").addEventListener('tap',function(){
+    	mui.openWindow({
+    		url:"wechat-login.html",
+    		id:"wechat"
     	})
     })
     </script>

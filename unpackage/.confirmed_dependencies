@@ -15,7 +15,8 @@
       "advice.html",
       "friends.html",
       "set.html",
-      "problem.html"
+      "problem.html",
+      "vip.html"
     ],
     "resources": [
       "js/app.js",
@@ -147,7 +148,13 @@
       "request.html",
       "redpocket.html",
       "address.html",
-      "set.html"
+      "set.html",
+      "message.html",
+      "account.html",
+      "advice.html",
+      "friends.html",
+      "identify.html",
+      "problem.html"
     ]
   },
   "examples/card.html": {
@@ -262,5 +269,13 @@
       "edit.html",
       "item-center-items.html"
     ]
+<<<<<<< HEAD
+=======
+  },
+  "vip.html": {
+    "refer": [
+      "invite-center.html"
+    ]
+>>>>>>> third commit
   }
 }

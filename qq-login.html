@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfonts.css"/>
+    <script src="js/mui.min.js"></script>
+</head>
+<body>
+    <style type="text/css"> 
+    	body{background:url(images/glass-1.jpg) no-repeat;}
+    	.content{background:url(images/glass-1.jpg) no-repeat;}
+    	.detail{margin-top: 60%;background:url(images/glass-1.jpg) no-repeat;}
+    	input::-webkit-input-placeholder{color: #beb4bc;}
+    	.pic{position: absolute;top: 10%;left: 35%;border-radius: 65px;}
+    	.label{margin-left: 12px; width: 16% !important;text-align: center;color: #bbb0bb;} 
+    	.num{width: 70% !important; float: left !important;color: #bbb0bb !important;}
+    	.mui-input-group:before{background: transparent !important;}
+    	.mui-input-group:after{left: 30px !important; right:30px !important;background-color: #beb4bc !important;}
+    	.mui-input-group .mui-input-row:after{left: 30px !important; right: 30px !important;background-color: #beb4bc !important;}
+    	.forget{color: #bbb0bb !important;font-size: 18px;margin-top: 3%;
+    	display: inline-block;margin-left: 9%;}
+    	.register{color: #bbb0bb !important;font-size: 18px;margin-top: 3%;
+    	display: inline-block;margin-left: 37%;}
+    	.level{margin-top: 5%;}
+    	.login{color: #fff !important; width: 90%;margin-top: 15%;margin-left: 5%;background: rgba(179,166,165,0.6);
+    	border: 1px solid transparent;border-radius: 10px;line-height: 15px;}
+    	.reg{color: #fff !important; width: 90%;margin-top: 5%;margin-left: 5%;background:transparent;
+    	border: 1px solid #b3a6af;border-radius: 10px;line-height: 15px;}
+    </style>
+    <div class="mui-content content">
+    	<img class="pic" src="images/logo.png" alt="" />
+    	<form class="mui-input-group detail">
+			<div class="mui-input-row">
+				<label class="label"><span class="icon iconfont icon-shouji"></span></label>
+				<input type="text" placeholder="请输入账号" class="mui-input-clear mui-input num">
+			</div>
+			<div class="mui-input-row level">
+				<label class="label"><span class="icon iconfont icon-jianpan"></span></label>
+				<input type="password" placeholder="请输入密码" class="mui-input-clear mui-input num">
+			</div>
+		</form>
+		<a class="forget" href="#">忘记密码？</a>
+		<a class="register" href="#">重新注册</a>
+		<button type="button" class="mui-btn mui-btn-white mui-btn-block login">登录</button>
+    	<button type="button" class="mui-btn mui-btn-white mui-btn-block reg">注册</button>
+    </div>
+    <script type="text/javascript">
+    mui.init()
+    </script>
+</body>
+</html>

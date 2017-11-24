@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfonts.css"/>
+    <script src="js/mui.min.js"></script>
+</head>
+<body>
+    <style type="text/css">
+    	body{background: url(images/glass-1.jpg) no-repeat;}
+    	.content{background: url(images/glass-1.jpg) no-repeat;padding-top: 5%;}
+    	.detail{margin-top: 75%;background: url(images/glass-1.jpg) no-repeat;}
+    	.label{margin-left: 25px; width: 13% !important;text-align: center;
+    	color: #bbb0bb;padding-left: 0 !important;} 
+    	.icon{margin-left: -20px;}
+    	.num{width: 70% !important; float: left !important;color: #bbb0bb !important;}
+    	.mui-input-group:before{background: transparent;}
+    	.mui-input-group:after{right: 25px;}
+    	.mui-input-group .mui-input-row:after{right: 25px;}
+    	.mui-input-group:after{left: 25px !important;}
+    	.btn{width: 90%;margin: 10% 0 0 4%;border-radius: 15px;border-color: #ccc;
+    	background: transparent;letter-spacing: 2em;padding-left: 8%;
+    	line-height: 13px;color: white;}
+    	.forget{color: #ccc; margin-left: 7%;margin-top: 6%;display: inline-block;color: #ccc !important;}
+    	.register{color: #ccc;margin-left: 50%;margin-top: 3%;display: inline-block;color: #ccc !important;}
+    	.pic{position: absolute;top: 10%;left: 35%;border-radius: 65px;}
+    </style>
+    <div class="mui-content content">
+    	<img class="pic" src="images/logo.png" alt="" />
+    	<form class="mui-input-group detail">
+			<div class="mui-input-row">
+				<label class="label"><span class="icon iconfont icon-shouji"></span></label>
+				<input type="text" placeholder="请输入账号" class="mui-input-clear mui-input num">
+			</div>
+			<div class="mui-input-row level">
+				<label class="label"><span class="icon iconfont icon-jianpan"></span></label>
+				<input type="password" placeholder="请输入密码" class="mui-input-clear mui-input num">
+			</div>
+		</form>
+		<button type="button" class="mui-btn btn mui-btn-white mui-btn-block">登录</button>
+    	<a class="forget" href="#">忘记密码</a>
+    	<a class="register" href="#">注册<<</a>
+    </div>
+    <script type="text/javascript">
+    mui.init();
+    </script>
+</body>
+</html>

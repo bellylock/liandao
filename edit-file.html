@@ -6,30 +6,28 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="css/app.css"/>
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script type="text/javascript" src="js/mui.min.js"></script>
+    <script src="js/mui.view.js"></script>
 </head>
 <body>
-    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
-    
     <style type="text/css">
     	body{background: white;}
     	.back{width: 10%;margin-top: 12px;}
     	.refresh{float: right;margin-right: 10px;margin-top: 12px;color: #666 !important;}
     	.mui-bar{display: block !important;}
-    	.mui-content{margin-top: 15%;background: white;}
+    	.mui-content{background: white;}
     	.mui-table-view-cell:after{right: 5%;left: 3%;}
     	.mui-table-view:after{left: 3%;right: 5%;}
     	.mui-table-view:before{background-color: transparent;}
     	.mui-table-view-cell{line-height: 43px;}
     	.pic{margin-left: 70%;}
-    	.img{width: 10%;margin-top: 1%;display: block;float: right;border-radius: 30px;background: #dcdcdc;padding: 5px;
-    	margin-right: 2%;}
+    	.img{width:45px;height: 45px; margin-top: 1%;display: block;float: right;
+    	padding: 5px;margin-right: 4%;}
     	.right{float: right;margin-right: 6%;}
     	.skill{margin-left: 20%;}
     	.skill p{margin-left: 17%;}
-    	.identy{margin-left: 70%;margin-top: -28%;display: block;}
+    	.identy{margin-left: 70%;margin-top: -28%;display: block;} 
     	.first{width: 11%;}
     	.second{width: 45%;}
     	.confirm{color: #333;text-align: center;margin-top: 5%;}
@@ -42,8 +40,12 @@
 	<div class="mui-content">
 		<ul class="mui-table-view">
 		    <li class="mui-table-view-cell">
-		                    头像
-		        <span class="pic"><img class="img" src="images/per-1.png" alt="" /></span>		            
+		    	<a class="mui-navigate-right" id="head">
+		    	 	头像
+		        <span class="pic"> 
+		        	<img class="mui-media-object mui-pull-left img head-img" src="images/per-1.png" id="head-img"/>
+		        </span>
+		    	</a>
 		    </li>
 		    <li class="mui-table-view-cell">
 		        <a class="mui-navigate-right">
@@ -89,7 +91,105 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-    mui.init()
+    mui.init();
+    mui.plusReady(function(){
+    	//更改头像
+    	mui(".mui-table-view-cell").on("tap", "#head", function(e) {
+			if(mui.os.plus){
+				var a = [{
+					title: "拍照"
+				}, {
+					title: "从手机相册选择"
+				}];
+				plus.nativeUI.actionSheet({
+					title: "修改头像",
+					cancel: "取消",
+					buttons: a
+				}, function(b) {
+					switch (b.index) {
+						case 0:
+							break;
+						case 1:
+							getImage();
+							break;
+						case 2:
+							galleryImg();
+							break;
+						default:
+							break
+					}
+				})	
+			}
+			
+		});
+		
+		function getImage() {
+			var c = plus.camera.getCamera();
+			c.captureImage(function(e) {
+				plus.io.resolveLocalFileSystemURL(e, function(entry) {
+					var s = entry.toLocalURL() + "?version=" + new Date().getTime();
+					console.log(s);
+					document.getElementById("head-img").src = s;
+//					document.getElementById("head-img1").src = s;
+					//变更大图预览的src
+					//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+					document.querySelector("#__mui-imageview__group .mui-slider-item img").src = s + "?version=" + new Date().getTime();;;
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(s) {
+				console.log("error" + s);
+			}, {
+				filename: "_doc/head.jpg"
+			})
+		};
+		function galleryImg() {
+			plus.gallery.pick(function(a) {
+				plus.io.resolveLocalFileSystemURL(a, function(entry) {
+					plus.io.resolveLocalFileSystemURL("_doc/", function(root) {
+						root.getFile("head.jpg", {}, function(file) {
+							//文件已存在
+							file.remove(function() {
+								console.log("file remove success");
+								entry.copyTo(root, 'head.jpg', function(e) {
+										var e = e.fullPath + "?version=" + new Date().getTime();
+										document.getElementById("head-img").src = e;
+//										document.getElementById("head-img1").src = e;
+										//变更大图预览的src
+										//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+										document.querySelector("#__mui-imageview__group .mui-slider-item img").src = e + "?version=" + new Date().getTime();
+									},
+									function(e) {
+										console.log('copy image fail:' + e.message);
+									});
+							}, function() {
+								console.log("delete image fail:" + e.message);
+							});
+						}, function() {
+							//文件不存在
+							entry.copyTo(root, 'head.jpg', function(e) {
+									var path = e.fullPath + "?version=" + new Date().getTime(); 
+									document.getElementById("head-img").src = path;
+//									document.getElementById("head-img1").src = path;
+									//变更大图预览的src
+									//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+									document.querySelector("#__mui-imageview__group .mui-slider-item img").src = path;
+								},
+								function(e) {
+									console.log('copy image fail:' + e.message);
+								});
+						});
+					}, function(e) {
+						console.log("get _www folder fail");
+					})
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(a) {}, {
+				filter: "image"
+			}) 
+		};
+    })
     </script>
 </body>
 </html>

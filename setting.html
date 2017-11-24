@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hello MUI</title>
+		<title>设置</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -15,7 +15,7 @@
 				background-color: #efeff4;
 			}
 			.mui-views,
-			.mui-view,
+			.mui-view,addEventListener
 			.mui-pages,
 			.mui-page,
 			.mui-page-content {
@@ -134,6 +134,11 @@
 				margin: 35px auto;
 				display: none;
 			}
+			.storage{float: right;margin-right: %;}
+			.clear{padding-right: 20px !important;}
+			.pda{ margin-top: 40px;}
+			.content{margin-top: -12px;}
+			.gesture{margin-top: 46px;}
 		</style>
 		<link rel="stylesheet" type="text/css" href="./css/feedback-page.css" />
 	</head>
@@ -160,22 +165,31 @@
 			</div>
 			<!--页面标题栏结束-->
 			<!--页面主内容区开始-->
-			<div class="mui-page-content">
+			<div class="mui-page-content content">
 				<div class="mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<ul class="mui-table-view mui-table-view-chevron">
 							<li class="mui-table-view-cell">
-								<a id="rate" class="mui-navigate-right">评分鼓励</a>
+								<a id="rate" class="mui-navigate-right">新消息提醒</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a id="share" class="mui-navigate-right">分享推荐</a>
+								<a class="mui-navigate-right">黑名单</a>
 							</li>
 							<li class="mui-table-view-cell">
-								<a id="tel" class="mui-navigate-right">客服电话</a>
+								<a id="share" class="mui-navigate-right">分享</a>
+							</li>
+							<li class="mui-table-view-cell clear">
+								清除缓存
+								<span class="storage">0.5M</span>
 							</li>
 							<li class="mui-table-view-cell">
 								<a id="feedback-btn" href="#feedback" class="mui-navigate-right">问题反馈</a>
 							</li>
+							<li class="mui-table-view-cell detail">
+			    	            <a id="share" class="mui-navigate-right">
+			    	                                      关于我们
+			    	            </a>
+			    	        </li> 
 						</ul>
 						<ul class="mui-table-view mui-table-view-chevron">
 							<li class="mui-table-view-cell">
@@ -228,7 +242,7 @@
 			<div class="mui-page-content">
 				<div class="mui-content-padded">
 					<ul class="mui-table-view mui-table-view-chevron">
-						<li class="mui-table-view-cell">
+						<li class="mui-table-view-cell gesture">
 							使用手势解锁
 							<div id="lockState" class="mui-switch">
 								<div class="mui-switch-handle"></div>
@@ -241,15 +255,15 @@
 			</div>
 		</div>
 
-		<div id="feedback" class="mui-page feedback">
+		<div id="feedback" class="mui-page feedback"> 
 			<div class="mui-navbar-inner mui-bar mui-bar-nav">
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
 					<span class="mui-icon mui-icon-left-nav"></span>设置
 				</button>
 				<h1 class="mui-center mui-title">问题反馈</h1>
 			</div>
-			<div class="mui-page-content">
-				<p>问题和意见</p>
+			<div class="mui-page-content">  
+				<p class="pda">问题和意见</p>
 				<div class="row mui-input-row">
 					<textarea id='question' class="mui-input-clear question" placeholder="请详细描述你的问题和意见..."></textarea>
 				</div>
@@ -377,9 +391,9 @@
 			}
 		});
 		 //客服电话
-		document.getElementById("tel").addEventListener('tap', function() {
-			plus.device.dial("114");
-		});
+//		document.getElementById("tel").addEventListener('tap', function() {
+//			plus.device.dial("114");
+//		});
 		 //退出操作******************
 		document.getElementById('exit').addEventListener('tap', function() {
 			if (mui.os.ios) {

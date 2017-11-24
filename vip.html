@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <title>Document</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <script src="js/mui.min.js"></script>
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+=======
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <script src="js/mui.min.js"></script>
+>>>>>>> third commit
 </head>
 <body>
     <style type="text/css">
@@ -37,7 +44,11 @@
     	.second{border-left: 1px solid white;}
     	.check{color: white !important; margin-bottom: 4px;display: block;}
     	.x5{text-align: center;width: 40%;border: 1px solid #949393;padding-top: 4%;
+<<<<<<< HEAD
     	margin-left: 6%;margin-top: 7%;border-radius: 5px;}
+=======
+    	margin-left: 7%;margin-top: 7%;border-radius: 5px;}
+>>>>>>> third commit
     	.pic{width: 20%;}
     	.spe{border: 1px solid #949393;padding: 5px;border-radius: 15px;}
     	.foot{position: fixed;bottom: 0;left:0;width: 100%;background: #949393;
@@ -46,12 +57,22 @@
     	.user{color: white;display: block;}
     	.rechange{color: white;display: block;}
     	.draw{width: 16%;}
+<<<<<<< HEAD
     	.box{position: absolute;bottom: 4%;left: 34%;width: 30%;height: 19%; padding: 6px 0 6px 5px;
+=======
+    	.box{position: absolute;bottom: 3%;left: 35.5%;width: 30%;height: 19%; padding: 6px 0 6px 5px;
+>>>>>>> third commit
     	border: 1px solid red;border-radius: 60px;}
     	.online{background:#cc401a ;width: 95%;height: 100%;border-radius: 60px;
     	text-align: center;}
     	.onlinepic{width: 70%;padding: 5px;}
+<<<<<<< HEAD
     	.line{display: block;color: white;margin-top: -5%;}
+=======
+    	.line{display: block;color: white;margin-top: -10%;}
+    	#bar{width: 90%;margin-top: 2%;}
+    	.mui-progressbar span{background: white;}
+>>>>>>> third commit
     </style>
     <header class="mui-bar mui-bar-nav">
         <a class="mui-action-back mui-pull-left top">
@@ -59,7 +80,11 @@
         </a>
         <h1 class="mui-title">会员中心</h1>
         <a class="mui-action-back  mui-pull-right top">
+<<<<<<< HEAD
         	<img class="menu" src="images/pro.png" alt="" />
+=======
+        	<img class="menu" src="images/pro.png" alt="" />							
+>>>>>>> third commit
         </a>
     </header>
     <div class="mui-content">
@@ -80,10 +105,16 @@
     		    	<div class="mui-col-xs-12 c12">
     		    		<span class="gap">还差63分升级到4级会员</span>
     		    		<span class="strip">27/90</span>
+<<<<<<< HEAD
     		    		<!--<div id="bar" class="mui-progressbar">
 							<span></span>
 						</div>-->
 						<div class="bar mui-col-xs-12"><span class="own"></span></div>
+=======
+    		    		<div id="bar" class="mui-progressbar">
+						    <span></span>
+						</div>
+>>>>>>> third commit
     		    	</div>
     		    </div>
     		</div>
@@ -122,7 +153,11 @@
     	    	<img class="pic spe" src="images/award (1).png/" alt="" />
     	    	<p>群打赏</p>
     	    </div>
+<<<<<<< HEAD
     	    <div class="mui-col-xs-5 x5">
+=======
+    	    <div class="mui-col-xs-5 x5" id="myinvited">
+>>>>>>> third commit
     	    	<img class="pic" src="images/invite (1).png/" alt="" />
     	    	<p>我的邀约</p>
     	    </div>
@@ -146,6 +181,7 @@
     </div>
     <script type="text/javascript">
     mui.init();
+<<<<<<< HEAD
 //  mui("#bar").progressbar({progress:20}).show();
 data = [["2000-06-05",116],["2000-06-06",129],["2000-06-07",135],["2000-06-08",86],["2000-06-09",73],["2000-06-10",85],["2000-06-11",73],["2000-06-12",68],["2000-06-13",92],["2000-06-14",130],["2000-06-15",245],["2000-06-16",139],["2000-06-17",115],["2000-06-18",111],["2000-06-19",309],["2000-06-20",206],["2000-06-21",137],["2000-06-22",128],["2000-06-23",85],["2000-06-24",94],["2000-06-25",71],["2000-06-26",106],["2000-06-27",84],["2000-06-28",93],["2000-06-29",85],["2000-06-30",73],["2000-07-01",83],["2000-07-02",125],["2000-07-03",107],["2000-07-04",82],["2000-07-05",44],["2000-07-06",72],["2000-07-07",106],["2000-07-08",107],["2000-07-09",66],["2000-07-10",91],["2000-07-11",92],["2000-07-12",113],["2000-07-13",107],["2000-07-14",131],["2000-07-15",111],["2000-07-16",64],["2000-07-17",69],["2000-07-18",88],["2000-07-19",77],["2000-07-20",83],["2000-07-21",111],["2000-07-22",57],["2000-07-23",55],["2000-07-24",60]];
 
@@ -216,5 +252,15 @@ option = {
     }]
 };
     </script>
+=======
+	mui("#bar").progressbar({progress:30}).show();
+	document.getElementById("myinvited").addEventListener('tap',function(){
+		mui.openWindow({
+			url:"invite-center.html",
+			id:"myinvited"
+		})
+	})
+</script>
+>>>>>>> third commit
 </body>
 </html>

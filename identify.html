@@ -11,7 +11,7 @@
     <style type="text/css">
     	.title{margin-left:2%;font-size: 15px;margin-top: 3%;}
     	.click{border-bottom: 1px solid blue;}
-    	.btn{position: absolute;bottom: 40%;left: 10%; width: 80%;line-height: 33px;background: blue;color: white;}
+    	.btn{position: fixed;bottom: 20%;left: 10%; width: 80%;line-height: 33px;background: blue;color: white;}
     </style>
     <header class="mui-bar mui-bar-nav">
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -38,9 +38,8 @@
 			</div>
 		</form>
 		<p class="title">无法完成自动认证请<a class="click" href="http://www.baidu.com">点击此处</a></p>
-		<button class="btn">开始认证</button>
+		<button type="btn" class="mui-btn btn">开始认证</button>
     </div>
-    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     mui.init()
     </script>

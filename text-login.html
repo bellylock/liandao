@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfonts.css"/>
+    <script src="js/mui.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/verificationCode.js"></script>
+</head>
+<body>
+    <style type="text/css">
+    	body{background: white;}
+    	.content{background: white;margin-top: 12%;}
+    	.top{padding-left: 25%;}
+    	.pic{width: 18%;}
+    	.name{display:block;font-size: 40px;color:#fd6363;margin-top: -15%;
+    	margin-left: 20%;}
+    	.mui-input-group:before{background: transparent;}
+    	.mui-input-group:after{background: transparent;}
+    	.mui-input-group .mui-input-row:after{background: transparent;}
+    	.detail{margin-top: 12%;}
+    	.phone{width: 60%;}
+    	.label{width: 15% !important;text-align: center;border-bottom: 1px solid #ccc !important;
+    	margin-left: 4%;}
+    	.text{width: 76% !important;float: left !important;border-bottom: 1px solid #ccc !important;line-height: 23px !important;}
+    	.texts{width: 40% !important;float: left !important;border-bottom: 1px solid #ccc !important;line-height: 23px !important;}
+    	.btn{padding:14px 16px !important; float: left !important;margin-left: 2%;width: 34% !important;border-radius: 0;}
+    	.msg{margin-top: 3%;}
+    	.identify{width: 40% !important;margin-top: 5%;margin-left: 10%; 
+    	border-radius: 0 !important;padding-left: 3%;}
+    	#vCode{width:120px;height: 40px;border: 1px solid white; display: inline-block;
+   		margin-bottom: -15px;margin-left: 5px;}
+   		.log{width: 90% !important;margin-left: 6%;line-height: 13px !important;
+   		letter-spacing: 2em;padding-left: 8%;margin-top: 5%;}
+    </style>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">登录</h1>
+    </header>
+    <div class="mui-content content">
+    	<div class="top">
+    		<img class="pic" src="images/logo.png" alt="" />
+    		<span class="name">恋道圈子</span>
+    	</div>
+    	<form class="mui-input-group detail">
+			<div class="mui-input-row">
+				<label class="label"><span class="icon iconfont icon-shouji phone"></span></label>
+				<input type="number" placeholder="请输入手机号" class="mui-input-clear mui-input text">
+			</div>
+			<div class="mui-input-row msg">
+				<label class="label"><span class="icon iconfont icon-jianpan"></span></label>
+				<input class="texts" type="text" placeholder="请输入短信码"/>
+				<button type="button" class="mui-btn mui-btn-blue btn">获取短信码</button>
+			</div>
+		</form>
+		<input type="text" class="identify" placeholder="请输入验证码" />
+		<div id="vCode"></div>
+		<button type="button" class="mui-btn mui-btn-blue mui-btn-block log">登录</button>
+    </div>
+    <script type="text/javascript">
+    mui.init();
+	var aa = document.querySelector("#vCode");
+		var code1 = new vCode(aa,{
+			len: 4,             //验证码字体数量
+		    bgColor: "#b5f4f4", //验证码背景颜色
+		    colors: [           //验证码字体颜色
+		        '#DDDDDD',
+		        '#DDFF77',
+		        '#77DDFF',
+		        '#99BBFF',
+		        '#7700BB',
+		        '#EEEE00',
+		        '#000507',
+		        '#980023',
+		        '#50001a',
+		    ]
+		});
+    </script>
+</body>
+</html>
